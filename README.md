@@ -1,10 +1,10 @@
-#RipCamp
+# RipCamp
 
-##Background and overview
+## Background and overview
 
 We've decided to create a HipCamp clone, "RipCamp", that allows users to locate the best surfing spots in town, and has information on conditions, such as surf, weather, and how crowded a spot is.
 
-##Functionality and MVP
+## Functionality and MVP
 
 1. New account creation, login, and guest/demo login
 2. A production README (NB: check out the sample production README - Accessing this on GitHub? Use this link.)
@@ -40,25 +40,25 @@ We've decided to create a HipCamp clone, "RipCamp", that allows users to locate 
 
 ## Technologies and Technical Challenges
 
-- MongoDB
-- MERN framework
-- Weather Api
-- Google Maps Api
-- AWS photo hosting
-- React/redux
-- Node
-- Express
+* MongoDB
+* MERN framework
+* Weather Api
+* Google Maps Api
+* AWS photo hosting
+* React/redux
+* Node
+* Express
 
-##Day-by-day
+## Day-by-day
 
-###Day 1:
+### Day 1:
 
 1. user auth/account creation - Campbell
 2. sign in/sign up page -kevin
 3. schema for surf spots - Anthony
 4. api routes for surf spots - Anthony
 
-###Day 2-3:
+### Day 2-3:
 
 5. react and visual components for different front-end routes
    -spots index - Campbell
@@ -66,16 +66,16 @@ We've decided to create a HipCamp clone, "RipCamp", that allows users to locate 
    -show page - kevin
    -AWS photo hosting - all 3, captain Kevin
 
-###Day 4:
+### Day 4:
 
 6. map - all 3
 
-###Day 5:
+### Day 5:
 
 7. backend regex search - Campbell Anthony
 8. search and nav bar - Kevin
 
-###Bonus:
+### Bonus:
 
 9. reviews schema and routes
 10. reviews visual components
