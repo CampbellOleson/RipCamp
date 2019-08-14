@@ -1,0 +1,82 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    height: 65px;
+    width: 100%;
+    color: #333;
+    top: 0;
+    left: 0;
+    /* z-index: 1; */
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+}
+
+.left-nav {
+    display: flex;
+    z-index: 1;
+}
+
+.logo { 
+    line-height: 65px;
+    padding: 0 25px;
+    text-decoration: none;
+
+}
+
+.logo h1 {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #333;
+
+}
+
+.right-nav {
+    /* display: flex; */
+    z-index: 1;
+    height: 100%;
+    text-decoration: none;
+}
+
+.right-nav a {
+    text-decoration: none;
+    color: #333;
+    height: 100%;
+    padding: 0 25px;
+    padding-bottom: 1.7em;
+}
+
+.nav-login-btn {
+    margin: 0 25px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 100%;
+    width: 100%;
+    padding: 0 25px;
+    align-items: center;
+}
+
+.nav-login-btn:hover {
+    border-bottom: 3px solid gray;
+}
+
+.nav-logout-btn {
+    margin: 0 50px 0 25px;
+    padding: 0 25px;
+    line-height: 60px;
+    font-size: 14px;
+    font-weight: 500;
+    height: 100%;
+    /* width: 100%; */
+    background-color: white;
+    border-style: none;
+    align-items: center;
+}
+
+.nav-logout-btn:hover {
+    border-bottom: 3px solid gray;
+}

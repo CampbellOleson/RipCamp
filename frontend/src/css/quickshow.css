@@ -1,0 +1,22 @@
+.quickshow_container {
+  margin-left: 30px;
+  width: 370px;
+  height: 315px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.quickshow_photobar {
+  height: 60%;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
+  background-color: black;
+}
+
+/* .quickshow_link{}
+
+.spot_infobar{} */
+/* spot_name
+spot_description
+review_bar */

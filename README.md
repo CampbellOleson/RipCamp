@@ -40,14 +40,14 @@ We've decided to create a HipCamp clone, "RipCamp", that allows users to locate 
 
 ## Technologies and Technical Challenges
 
-* MongoDB
-* MERN framework
-* Weather Api
-* Google Maps Api
-* AWS photo hosting
-* React/redux
-* Node
-* Express
+- MongoDB
+- MERN framework
+- Weather Api
+- Google Maps Api
+- AWS photo hosting
+- React/redux
+- Node
+- Express
 
 ## Day-by-day
 
