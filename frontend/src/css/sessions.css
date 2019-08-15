@@ -1,7 +1,8 @@
 
 .main {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 80px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .session-form-container {

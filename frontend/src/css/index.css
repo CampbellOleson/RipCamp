@@ -1,26 +1,66 @@
 .surf-index-container {
   display: flex;
   flex-direction: column;
-   /* width: 100vw; */
+  width: 95vw;
   justify-content: center;
   margin: 0 auto;
-  align-items: center;
-  /* position: relative; */
-  /* padding-top: 65px; */
+}
+
+.surf-greeting {
+  display: flex;
+  flex-direction: column;
+  /* position: fixed;
+  top: 0; */
+}
+
+.surf-index-container h1 {
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.surf-index-container h3 {
+  color: #333;
+  font-weight: 400;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  margin-top: 0;
+}
+
+.index-map-container {
+  display: flex;
 }
 
 .spot-index {
   height: min-content;
-  width: 58vw;
+  width: 55%;
   overflow-y: scroll;
   /* height:750px; */
-  height: 90vh;
+  height: 75vh;
   line-height: 1.5;
   color: #333333;
   box-sizing: border-box;
-  padding-top: 20px;
-  padding-left: 10px;
+  /* padding-top: 20px; */
+  /* padding-left: 10px; */
   display: grid;
   grid-template-columns: 50% 50%;
-} 
+}
 
+.map {
+  background: rgb(0, 0, 0);
+  /* background: linear-gradient(
+    90deg,
+    rgba(0, 255, 158, 1) 0%,
+    rgba(0, 254, 255, 1) 100%
+  ); */
+  background: url("https://ripcamp-dev.s3-us-west-1.amazonaws.com/big_sur_surf.jpg");
+  background-size: cover;
+  width: 42%;
+  /* height: 100%; */
+  margin-left: 10px;
+  /* position: absolute; */
+  /* left: 0; */
+  /* right: 10%; */
+  /* bottom: 10px; */
+}

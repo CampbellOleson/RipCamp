@@ -10,7 +10,7 @@ const SurfSpotSchema = new Schema({
     type: String,
     required: true
   },
-  difficutly: {
+  difficulty: {
     type: String
   },
   city: {
@@ -24,6 +24,9 @@ const SurfSpotSchema = new Schema({
   lng: {
     type: Number,
     required: true
+  },
+  photos: {
+    type: Array
   },
   date: {
     type: Date,

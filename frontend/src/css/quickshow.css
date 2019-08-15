@@ -1,22 +1,84 @@
 .quickshow_container {
   margin-left: 30px;
-  width: 370px;
+  width: 90%;
   height: 315px;
+  box-shadow: 2px 2px 4px gray;
   margin-bottom: 30px;
   border-radius: 5px;
-  background-color: lightgray;
+  background-color: white;
+}
+
+.quickshow_container:hover {
+  background-color: whitesmoke;
 }
 
 .quickshow_photobar {
   height: 60%;
   width: 100%;
   border-radius: 5px 5px 0px 0px;
-  background-color: black;
+  background-color: whitesmoke;
+  /* background-image: url("https://i2.wp.com/www.surfer.com/wp-content/uploads/2017/12/ZN_7753.jpg?w=2000&s"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 0.5s;
 }
 
-/* .quickshow_link{}
+.quickshow-photo {
+  width: 100%;
+  background-size: cover;
+}
 
-.spot_infobar{} */
-/* spot_name
-spot_description
-review_bar */
+.quickshow_link {
+  text-decoration: none;
+  color: black;
+  width: 100%;
+}
+
+.spot_name {
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.spot_description {
+  margin-top: 0px;
+  color: #303030;
+  font-size: 15px;
+  margin-right: 3px;
+}
+
+.spot_infobar {
+  padding-left: 12px;
+}
+
+.review_bar {
+  height: 10%;
+  color: seagreen;
+  padding-left: 10px;
+}
+
+.slider_button_photo {
+  width: 30px;
+  height: 40px;
+  
+  position: absolute;
+}
+
+/* 
+.slider_button_photo:hover {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+} */
+
+.slider_button_container {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}

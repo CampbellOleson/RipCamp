@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const express = require("express"); // the actual 
+const express = require("express"); // the actual
 const app = express();
 const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");

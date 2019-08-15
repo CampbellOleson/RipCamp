@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import QuickShowSlider from "./quickshow_slider";
 
 class QuickShow extends React.Component {
   constructor(props) {
@@ -10,11 +11,13 @@ class QuickShow extends React.Component {
     return (
       <div className="quickshow_container">
         <Link className="quickshow_link" to={`/spots/${this.props.spot._id}`}>
-          <div className="quickshow_photobar" />
-          <div className="spot_infobar">
-            <p className="spot_name">{this.props.spot.name}</p>
-            <p className="spot_description">{this.props.spot.description}</p>
-            <div className="review_bar" />
+          <QuickShowSlider spot={this.props.spot} />
+          <div className="bottom_half">
+            <div className="spot_infobar">
+              <p className="spot_name">{this.props.spot.name}</p>
+              <p className="spot_description">{this.props.spot.description}</p>
+            </div>
+            <div className="review_bar">Reviews</div>
           </div>
         </Link>
       </div>
@@ -23,3 +26,10 @@ class QuickShow extends React.Component {
 }
 
 export default QuickShow;
+
+{
+  /* <div className="quickshow_photobar" /> */
+}
+{
+  /* <img src={this.props.spot.photos[0]} className="quickshow-photo" alt=""/> */
+}
