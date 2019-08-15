@@ -15,6 +15,7 @@ const names = [
 ];
 
 const photos = {};
+
 photos["big sur"] = [
   "https://ripcamp-dev.s3-us-west-1.amazonaws.com/big_sur_surf.jpg",
   "https://ripcamp-dev.s3-us-west-1.amazonaws.com/big_sur2.jpg",
@@ -81,17 +82,43 @@ photos["surfer's paradise"] = [
   "https://ripcamp-dev.s3-us-west-1.amazonaws.com/surfers_paradise3.jpg"
 ];
 
-const min_lat = 33.7;
-const max_lat = 34;
-const min_lng = -118.4;
-const max_lng = -118.15;
+lat = [
+  33.7,
+  33.73,
+  33.76,
+  33.79,
+  33.81,
+  33.84,
+  33.87,
+  33.9,
+  33.93,
+  33.96,
+  33.99,
+  34.2,
+  34.5
+];
+lng = [
+  -118.4,
+  -118.375,
+  -118.35,
+  -118.325,
+  -118.3,
+  -118.275,
+  -118.25,
+  -118.225,
+  -118.2,
+  -118.175,
+  -118.15,
+  -118.125,
+  -118.1
+];
 
-module.exports = names.map(name => ({
+module.exports = names.map((name, idx) => ({
   name: name,
   description: "some killer waves",
   difficulty: "dangerous",
   city: "Los Angeles",
-  lat: Math.floor(Math.random() * (max_lat - min_lat + 1)) + min_lat,
-  lng: Math.floor(Math.random() * (max_lng - min_lng + 1)) + min_lng,
+  lat: lat[idx],
+  lng: lng[idx],
   photos: photos[name]
 }));

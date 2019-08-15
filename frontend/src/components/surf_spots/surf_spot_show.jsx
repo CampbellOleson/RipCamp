@@ -61,13 +61,20 @@ class SurfSpotShow extends React.Component {
           className="show-photos-container"
           style={{ backgroundImage: `url(${photo})` }}
         >
-          {/* <img className="quickshow_photo" src={photo} alt="" /> */}
-          <button className="back_button" onClick={this.backPhoto}>
-            go back
-          </button>
-          <button className="forward_button" onClick={this.forwardPhoto}>
-            go forward
-          </button>
+          <div className="show_slider_button_container">
+            <button className="show_slider_button" onClick={this.backPhoto}>
+              <img
+                className="show_slider_button_photo"
+                src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/back_arrow.png"
+              />
+            </button>
+            <button className="show_slider_button" onClick={this.forwardPhoto}>
+              <img
+                className="show_slider_button_photo"
+                src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/forward_arrow.png"
+              />
+            </button>
+          </div>
         </div>
 
         <div className="content-inner">
@@ -88,12 +95,9 @@ class SurfSpotShow extends React.Component {
             <a href="#reviews" className="reveiws-link">
               Reviews
             </a>
-           
-            
+
             <div className="description-container">
-              <div className="description">
-                Description: {spot.description}
-              </div>
+              <div className="description">Description: {spot.description}</div>
             </div>
             <br />
           </div>
@@ -103,9 +107,7 @@ class SurfSpotShow extends React.Component {
               <p>It's nice and sunny.</p>
               <p>Perfect surf weather</p>
             </div>
-            
           </div>
-
         </div>
       </div>
     );

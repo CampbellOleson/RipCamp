@@ -22,8 +22,16 @@ class QuickShowSlider extends React.Component {
     e.preventDefault();
     const length = this.props.spot.photos.length;
     const prevPhoto = this.state.selectedPhoto;
-    this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length });
+    const temp = length - 1;
+    if ((prevPhoto - 1) === -1){
+      this.setState({ selectedPhoto: temp % length})
+    }else{
+      this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length }
+      )
+    
+    // this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length});
   }
+}
 
   render() {
     const photo = this.props.spot.photos[this.state.selectedPhoto];

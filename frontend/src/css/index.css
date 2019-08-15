@@ -47,20 +47,4 @@
   grid-template-columns: 50% 50%;
 }
 
-.map {
-  background: rgb(0, 0, 0);
-  /* background: linear-gradient(
-    90deg,
-    rgba(0, 255, 158, 1) 0%,
-    rgba(0, 254, 255, 1) 100%
-  ); */
-  background: url("https://ripcamp-dev.s3-us-west-1.amazonaws.com/big_sur_surf.jpg");
-  background-size: cover;
-  width: 42%;
-  /* height: 100%; */
-  margin-left: 10px;
-  /* position: absolute; */
-  /* left: 0; */
-  /* right: 10%; */
-  /* bottom: 10px; */
-}
+

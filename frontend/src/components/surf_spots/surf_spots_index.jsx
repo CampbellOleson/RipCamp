@@ -3,12 +3,10 @@ import QuickShowContainer from "./quickshow_container";
 // import LoggedInNavContainer from "../nav/logged_in_nav_container";
 import "../../css/index.css";
 import Footer from "../footer/footer";
+// import SurfMap from '../map/surf_map';
+import SurfMap from "../map/surf_map_container";
 
 class SurfSpotsIndex extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
   render() {
     return (
       <div>
@@ -22,7 +20,7 @@ class SurfSpotsIndex extends React.Component {
           </div>
           <div className="index-map-container">
             <section className="spot-index">{this.allSurfSpots()}</section>
-            <section className="map" />
+            <SurfMap />
           </div>
         </div>
         <Footer />

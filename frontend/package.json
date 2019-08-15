@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "google": "^2.1.0",
+    "google-maps": "^3.3.0",
     "jwt-decode": "^2.2.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

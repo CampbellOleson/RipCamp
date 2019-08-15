@@ -1,7 +1,7 @@
 .quickshow_container {
   margin-left: 30px;
   width: 90%;
-  height: 315px;
+  height: 300px;
   box-shadow: 2px 2px 4px gray;
   margin-bottom: 30px;
   border-radius: 5px;
@@ -17,7 +17,6 @@
   width: 100%;
   border-radius: 5px 5px 0px 0px;
   background-color: whitesmoke;
-  /* background-image: url("https://i2.wp.com/www.surfer.com/wp-content/uploads/2017/12/ZN_7753.jpg?w=2000&s"); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -60,25 +59,28 @@
 }
 
 .slider_button_photo {
-  width: 30px;
-  height: 40px;
-  
-  position: absolute;
+  width: 20px;
+  height: 30px;
+  margin: 12px;
+  padding-top: 20px;
 }
 
-/* 
-.slider_button_photo:hover {
-  width: 30px;
-  height: 40px;
-  position: absolute;
-} */
+.slider_button {
+  display: none;
+  z-index: 10;
+}
+
+.slider_button_container:hover .slider_button {
+  display: block;
+}
 
 .slider_button_container {
-  width: 90%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  cursor: pointer;
 }
