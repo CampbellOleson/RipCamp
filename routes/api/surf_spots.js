@@ -5,9 +5,9 @@ const mongoose = require("mongoose");
 const SurfSpot = require("../../models/SurfSpot");
 // const validateSurfSpotInput = require("../../validation/surf_spots");
 
-router.get("/city", (req, res) => {
-  const city = req.query.city;
-  SurfSpot.find({ city: city }).then(spots => {
+router.get("/filter", (req, res) => {
+  // const filter = req.query["bounds"];
+  SurfSpot.find({ lat: lat, lng: lng }).then(spots => {
     const spots_obj = {};
     spots.forEach(spot => (spots_obj[spot.id] = spot));
     if (!spots) {

@@ -7,7 +7,6 @@
   color: #333;
   top: 0;
   left: 0;
-  /* z-index: 1; */
   align-items: center;
   background-color: white;
   border-bottom: 1px solid lightgray;
@@ -33,7 +32,6 @@
 }
 
 .right-nav {
-  /* display: flex; */
   z-index: 1;
   height: 100%;
   text-decoration: none;
@@ -69,7 +67,6 @@
   font-size: 14px;
   font-weight: 500;
   height: 100%;
-  /* width: 100%; */
   background-color: white;
   border-style: none;
   align-items: center;

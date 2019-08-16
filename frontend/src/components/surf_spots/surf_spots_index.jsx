@@ -1,10 +1,8 @@
 import React from "react";
 import QuickShowContainer from "./quickshow_container";
-// import LoggedInNavContainer from "../nav/logged_in_nav_container";
 import "../../css/index.css";
 import Footer from "../footer/footer";
-// import SurfMap from '../map/surf_map';
-import SurfMap from "../map/surf_map_container";
+import { SurfMapContainer } from "../map/surf_search_container";
 
 class SurfSpotsIndex extends React.Component {
   render() {
@@ -19,8 +17,14 @@ class SurfSpotsIndex extends React.Component {
             </h3>
           </div>
           <div className="index-map-container">
-            <section className="spot-index">{this.allSurfSpots()}</section>
-            <SurfMap />
+            <section className="spot-index">
+              {this.props.spots.map((spot, idx) => (
+                <QuickShowContainer spot={spot} key={idx} />
+              ))}
+            </section>
+            <div className="map-container">
+              <SurfMapContainer />
+            </div>
           </div>
         </div>
         <Footer />
@@ -28,18 +32,19 @@ class SurfSpotsIndex extends React.Component {
     );
   }
 
-  allSurfSpots() {
-    const keys = Object.keys(this.props.spots);
-    const spots = keys.map(key => {
-      return this.props.spots[key];
-    });
-    return spots.map((spot, idx) => (
-      <QuickShowContainer spot={spot} key={idx} />
-    ));
-  }
-
   componentDidMount() {
     this.props.getSurfSpots("Los Angeles");
   }
 }
+
 export default SurfSpotsIndex;
+
+// allSurfSpots() { */}
+//    const keys = Object.keys(this.props.spots);
+//   const spots = keys.map(key => { */}
+//    return this.props.spots[key];
+//   });
+//   return spots.map((spot, idx) => (
+//      <QuickShowContainer spot={spot} key={idx} />
+//    ));
+// } }

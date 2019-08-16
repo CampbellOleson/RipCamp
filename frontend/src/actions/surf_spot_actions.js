@@ -12,8 +12,8 @@ const receiveSingleSurfSpot = spot => ({
   spot
 });
 
-export const getSurfSpots = city => dispatch =>
-  ApiSurfSpotsUtil.fetchSurfSpots(city).then(spots =>
+export const getSurfSpots = filter => dispatch =>
+  ApiSurfSpotsUtil.fetchSurfSpots(filter).then(spots =>
     dispatch(receiveSurfSpots(spots.data))
   );
 
