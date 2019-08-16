@@ -1,13 +1,21 @@
 const express = require("express");
+// const $ = require("jquery");
+// const mongoose = require("mongoose");
 const router = express.Router();
-const mongoose = require("mongoose");
 
 const SurfSpot = require("../../models/SurfSpot");
-// const validateSurfSpotInput = require("../../validation/surf_spots");
 
 router.get("/filter", (req, res) => {
-  // const filter = req.query["bounds"];
-  SurfSpot.find({ lat: lat, lng: lng }).then(spots => {
+  const filter = JSON.parse(req.query.filter);
+  const nwLat = filter.bounds["northEast"].lat;
+  const seLat = filter.bounds["southWest"].lat;
+  const nwLng = filter.bounds["northEast"].lng;
+  const seLng = filter.bounds["southWest"].lng;
+
+  SurfSpot.find({
+    lat: { $gt: seLat, $lt: nwLat }, // currently this query returns an empty array
+    lng: { $gt: nwLng, $lt: seLng }
+  }).then(spots => {
     const spots_obj = {};
     spots.forEach(spot => (spots_obj[spot.id] = spot));
     if (!spots) {

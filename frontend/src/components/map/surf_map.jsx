@@ -42,7 +42,6 @@ class SurfMap extends React.Component {
         northEast: { lat: bounds.na.l, lng: bounds.ga.j },
         southWest: { lat: bounds.na.j, lng: bounds.ga.l }
       };
-
       this.props.updateFilter("bounds", bounds_obj);
     });
   }

@@ -8,10 +8,10 @@ export const changeFilter = (filter, value) => ({
   value: value
 });
 
-export function updateFilter(filter, value) { 
+export function updateFilter(filter, value) {
   return (dispatch, getState) => {
     dispatch(changeFilter(filter, value));
-    return dispatch(getSurfSpots(getState().ui.filters)); 
+    return dispatch(getSurfSpots(getState().ui.filters));
     // delicious curry!
   };
 }
