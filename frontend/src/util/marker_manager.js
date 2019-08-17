@@ -1,4 +1,3 @@
-import React from "react";
 const GoogleMapsLoader = require("google-maps");
 
 class MarkerManager {

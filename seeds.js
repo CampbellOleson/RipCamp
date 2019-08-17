@@ -11,7 +11,8 @@ const names = [
   "chuns reef",
   "haleiwa",
   "nazare",
-  "surfer's paradise"
+  "surfer's paradise",
+  "banzai pipeline"
 ];
 
 const photos = {};
@@ -82,42 +83,93 @@ photos["surfer's paradise"] = [
   "https://ripcamp-dev.s3-us-west-1.amazonaws.com/surfers_paradise3.jpg"
 ];
 
+photos["banzai pipeline"] = [
+  "https://ripcamp-dev.s3-us-west-1.amazonaws.com/banzai1.jpeg",
+  "https://ripcamp-dev.s3-us-west-1.amazonaws.com/danger.jpeg",
+  "https://ripcamp-dev.s3-us-west-1.amazonaws.com/pipelinesurfer.jpg"
+];
+
 lat = [
-  33.7,
-  33.73,
-  33.76,
-  33.79,
-  33.81,
-  33.84,
-  33.87,
-  33.9,
-  33.93,
-  33.96,
-  33.99,
-  34.2,
-  34.5
+  34.006951,
+  33.970524,
+  33.89579,
+  33.827947,
+  33.7933,
+  33.769399,
+  33.738833,
+  33.604882,
+  33.719811,
+  21.620481,
+  21.603613,
+  33.711100,
+  33.741542,
+  21.664746
 ];
 lng = [
-  -118.4,
-  -118.375,
-  -118.35,
-  -118.325,
-  -118.3,
-  -118.275,
-  -118.25,
-  -118.225,
-  -118.2,
-  -118.175,
-  -118.15,
-  -118.125,
-  -118.1
+  -118.499958,
+  -118.464906,
+  -118.420302,
+  -118.392946,
+  -118.409029,
+  -118.424309,
+  -118.112673,
+  -118.113567,
+  -118.327859,
+  -158.084705,
+  -158.106276,
+  -118.283311,
+  -118.379353,
+  -158.05309
+];
+
+const oahuNames = ["chuns reef", "banzai pipeline", "haleiwa"];
+
+const dangerousSpots = [
+  "chuns reef",
+  "banzai pipeline",
+  "nazare",
+  "sharks cove",
+  "riptide"
+];
+
+const difficultSpots = ["davy jones locker", "bootstrap bill"];
+
+const intermediateSpots = [
+  "big sur",
+  "coral reef",
+  "santa monica",
+  "pirates bay",
+  "club dolphin"
+];
+
+const descriptions = [
+  "some killer waves",
+  "surf the tsunami",
+  "ride the high tide",
+  "roll in the deep",
+  "rocky waves",
+  "icy waves",
+  "competition central",
+  "free boards here",
+  "a place for free surf coaching",
+  "The hottest place on Earth",
+  "Surf with the sharks",
+  "Heaven on Earth",
+  "The only vacation spot you ever need",
+  "Sunshine point"
 ];
 
 module.exports = names.map((name, idx) => ({
   name: name,
-  description: "some killer waves",
-  difficulty: "dangerous",
-  city: "Los Angeles",
+  description: descriptions[idx],
+  difficulty: dangerousSpots.includes(name)
+    ? "dangerous"
+    : intermediateSpots.includes(name)
+    ? "intermediate"
+    : difficultSpots.includes(name)
+    ? "difficult"
+    : "beginner",
+  city: oahuNames.includes(name) ? "Oahu" : "Los Angeles",
   lat: lat[idx],
   lng: lng[idx],
   photos: photos[name]

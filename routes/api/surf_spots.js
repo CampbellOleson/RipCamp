@@ -1,33 +1,28 @@
 const express = require("express");
-// const $ = require("jquery");
-// const mongoose = require("mongoose");
-const router = express.Router();
-
+const SearchUtil = require("./util/filters_util");
 const SurfSpot = require("../../models/SurfSpot");
+const router = express.Router();
 
 router.get("/filter", (req, res) => {
   const filter = JSON.parse(req.query.filter);
-  const nwLat = filter.bounds["northEast"].lat;
-  const seLat = filter.bounds["southWest"].lat;
-  const nwLng = filter.bounds["northEast"].lng;
-  const seLng = filter.bounds["southWest"].lng;
+  const searchPromise = filter.search
+    ? SearchUtil.findBySearch(filter.search)
+    : filter.bounds
+    ? SearchUtil.findByBounds(filter.bounds)
+    : null;
 
-  SurfSpot.find({
-    lat: { $gt: seLat, $lt: nwLat }, // currently this query returns an empty array
-    lng: { $gt: nwLng, $lt: seLng }
-  }).then(spots => {
-    const spots_obj = {};
-    spots.forEach(spot => (spots_obj[spot.id] = spot));
-    if (!spots) {
-      res.status(404);
-    }
-    if (spots.length > 0) {
-      res.json(spots_obj);
-    } else {
-      res.status(404);
-      res.json({ msg: "There are no surf spots in your area." });
-    }
-  });
+  if (searchPromise) {
+    searchPromise.then(spots => {
+      if (spots) {
+        const spots_obj = {};
+        spots.forEach(spot => (spots_obj[spot.id] = spot));
+        res.json(spots_obj);
+      } else {
+        res.status(404);
+        res.json({ msg: "Couldn't find surf spots, something went wrong." });
+      }
+    });
+  }
 });
 
 router.get("/spots/:spot_id", (req, res) => {
@@ -42,3 +37,17 @@ router.get("/spots/:spot_id", (req, res) => {
 });
 
 module.exports = router;
+
+// SurfSpot.find({
+//   lat: { $gt: seLat, $lt: nwLat },
+//   lng: { $gt: nwLng, $lt: seLng }
+// }).then(spots => {
+//   const spots_obj = {};
+//   spots.forEach(spot => (spots_obj[spot.id] = spot));
+//   if (spots && spots.length > 0) {
+//     res.json(spots_obj);
+//   } else {
+//     res.status(404);
+//     res.json({ msg: "There are no surf spots in your area." });
+//   }
+// });

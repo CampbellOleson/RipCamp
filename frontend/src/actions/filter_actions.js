@@ -11,7 +11,6 @@ export const changeFilter = (filter, value) => ({
 export function updateFilter(filter, value) {
   return (dispatch, getState) => {
     dispatch(changeFilter(filter, value));
-    return dispatch(getSurfSpots(getState().ui.filters));
-    // delicious curry!
+    return dispatch(getSurfSpots({ [filter]: getState().ui.filters[filter] }));
   };
 }

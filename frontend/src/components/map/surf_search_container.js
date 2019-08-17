@@ -5,7 +5,12 @@ import SurfMap from "./surf_map";
 import SurfSpotsIndex from "../surf_spots/surf_spots_index";
 
 const msp = state => ({
-  spots: Object.values(state.entities.surfSpots)
+  spots: Object.values(state.entities.surfSpots),
+  search: state.ui.filters
+    ? state.ui.filters.search
+      ? state.ui.filters.search
+      : null
+    : null
 });
 
 const mdp = dispatch => ({

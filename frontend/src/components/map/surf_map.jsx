@@ -1,8 +1,9 @@
 import React from "react";
 import MarkerManager from "../../util/marker_manager";
-
 var GoogleMapsLoader = require("google-maps");
 GoogleMapsLoader.KEY = "AIzaSyD0-9GqpxYu6bzDIzbJou9oHpWscNKEUd0";
+
+var MAP;
 
 class SurfMap extends React.Component {
   constructor(props) {
@@ -12,21 +13,31 @@ class SurfMap extends React.Component {
 
   componentDidMount() {
     const map = this.refs.map;
+    const spot = this.props.spots[0];
+    const lat = spot ? spot.lat : 34.013341;
+    const lng = spot ? spot.lng : -118.50079;
     const mapOptions = {
-      center: { lat: 33.5, lng: -118.1 },
-      zoom: 8
+      center: { lat: lat, lng: lng },
+      zoom: 10
     };
     GoogleMapsLoader.load(google => {
-      const gMap = new google.maps.Map(map, mapOptions);
-      this.MarkerManager = new MarkerManager(gMap);
+      MAP = new google.maps.Map(map, mapOptions);
+      this.MarkerManager = new MarkerManager(MAP);
       this.MarkerManager.updateMarkers(this.props.spots);
-      this.listenBounds(gMap);
+      this.listenBounds(MAP);
     });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(oldProps) {
     if (this.MarkerManager) {
       this.MarkerManager.updateMarkers(this.props.spots);
+    }
+
+    if (this.props.search !== oldProps.search) {
+      const spots = this.props.spots;
+      if (spots.length > 0) {
+        this.moveToLocation(spots[0].lat, spots[0].lng);
+      }
     }
   }
 
@@ -37,12 +48,18 @@ class SurfMap extends React.Component {
   listenBounds(map) {
     map.addListener("idle", () => {
       const bounds = map.getBounds();
-      console.log(bounds);
       const bounds_obj = {
         northEast: { lat: bounds.na.l, lng: bounds.ga.j },
         southWest: { lat: bounds.na.j, lng: bounds.ga.l }
       };
       this.props.updateFilter("bounds", bounds_obj);
+    });
+  }
+
+  moveToLocation(lat, lng) {
+    GoogleMapsLoader.load(google => {
+      const center = new google.maps.LatLng(lat, lng);
+      MAP.panTo(center);
     });
   }
 }

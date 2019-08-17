@@ -29,7 +29,14 @@ class SurfSpotShow extends React.Component {
     e.preventDefault();
     const length = this.props.spot.photos.length;
     const prevPhoto = this.state.selectedPhoto;
-    this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length });
+    const temp = length - 1;
+    if (prevPhoto - 1 === -1) {
+      this.setState({ selectedPhoto: temp % length });
+    } else {
+      this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length });
+
+      // this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length});
+    }
   }
 
   render() {
@@ -40,23 +47,6 @@ class SurfSpotShow extends React.Component {
     const photo = this.props.spot.photos[this.state.selectedPhoto];
     return (
       <div className="spot-show-container">
-        {/* <div className="show-photos-container" /> */}
-        {/* <img src={spot.photos[0]} alt=""/> */}
-        {/* <div className="slide-container">
-          <span id="slider-image-1" />
-          <span id="slider-image-2" />
-          <span id="slider-image-3" />
-          <div class="image-container">
-            <img src={spot.photos[0]} className="slider-image" />
-            <img src={spot.photos[1]} className="slider-image" />
-            <img src={spot.photos[2]} className="slider-image" />
-          </div>
-          <div className="button-container">
-            <a href="#slider-image-1" className="slider-button" />
-            <a href="#slider-image-2" className="slider-button" />
-            <a href="#slider-image-3" className="slider-button" />
-          </div>
-        </div> */}
         <div
           className="show-photos-container"
           style={{ backgroundImage: `url(${photo})` }}
@@ -66,12 +56,14 @@ class SurfSpotShow extends React.Component {
               <img
                 className="show_slider_button_photo"
                 src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/back_arrow.png"
+                alt=""
               />
             </button>
             <button className="show_slider_button" onClick={this.forwardPhoto}>
               <img
                 className="show_slider_button_photo"
                 src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/forward_arrow.png"
+                alt=""
               />
             </button>
           </div>
@@ -92,9 +84,6 @@ class SurfSpotShow extends React.Component {
                 <p>{spot.difficulty}</p>
               </div>
             </div>
-            <a href="#reviews" className="reveiws-link">
-              Reviews
-            </a>
 
             <div className="description-container">
               <div className="description">Description: {spot.description}</div>
@@ -104,9 +93,16 @@ class SurfSpotShow extends React.Component {
           <div className="conditions-wrapper">
             <div id="conditions-header">
               <h2>Conditions</h2>
+            </div>
+            <div className="conditions">
               <p>It's nice and sunny.</p>
               <p>Perfect surf weather</p>
             </div>
+          </div>
+          <div className="reviews-container">
+            <a href="#reviews" className="reveiws-link">
+              This is where the reviews will go
+            </a>
           </div>
         </div>
       </div>
@@ -118,11 +114,13 @@ class SurfSpotShow extends React.Component {
       case "beginner":
         return "green";
       case "intermediate":
-        return "yellow";
+        return "blue";
       case "difficult":
         return "red";
       case "dangerous":
         return "black";
+      default:
+        return "blue";
     }
   }
 }

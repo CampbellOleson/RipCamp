@@ -28,6 +28,9 @@ const SurfSpotSchema = new Schema({
   photos: {
     type: Array
   },
+  reviews: {
+    type: String
+  },
   date: {
     type: Date,
     default: Date.now

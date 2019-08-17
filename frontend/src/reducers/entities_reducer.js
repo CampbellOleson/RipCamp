@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import surfSpotReducer from "./surf_spot_reducer";
+import surfSpotsReducer from "./surf_spots/surf_spots_reducer";
 
 const entitiesReducer = combineReducers({
-  surfSpots: surfSpotReducer
+  surfSpots: surfSpotsReducer
 });
 
 export default entitiesReducer;

@@ -45,12 +45,14 @@ class QuickShowSlider extends React.Component {
             <img
               className="slider_button_photo"
               src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/back_arrow.png"
+              alt=""
             />
           </div>
           <div className="slider_button" onClick={this.forwardPhoto}>
             <img
               className="slider_button_photo"
               src="https://ripcamp-dev.s3-us-west-1.amazonaws.com/forward_arrow.png"
+              alt=""
             />
           </div>
         </div>
