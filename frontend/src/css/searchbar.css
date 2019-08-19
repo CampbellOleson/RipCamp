@@ -1,4 +1,5 @@
 .searchbar-container {
+<<<<<<< HEAD
   width: 40%;
   z-index: 12;
   padding: 10px;
@@ -6,6 +7,15 @@
   box-shadow: 0 10px 40px #2bb5bf, 0 0 0 20px #ffffffeb;
   border-radius: 20px;
   transform: scale(0.6);
+=======
+    /* width: 40%; */
+    padding: 10px;
+    background-color: #2BB5BF;
+    box-shadow: 0 5px 20px #2BB5BF, 0 0 0 15px #ffffffeb;
+    border-radius: 20px;
+    transform: scale(0.6);
+    margin: 1em;
+>>>>>>> b31f48e1db01767b1c325056842f5ce846fe547b
 }
 
 .tb {
@@ -35,11 +45,19 @@
 
 .searchbar,
 .searchbar-btn {
+<<<<<<< HEAD
   color: #fff;
   padding: 0;
   margin: 0;
   border: 0;
   background-color: transparent;
+=======
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: transparent;
+>>>>>>> b31f48e1db01767b1c325056842f5ce846fe547b
 }
 
 .searchbar-btn {
@@ -51,6 +69,10 @@
   color: black;
   z-index: 9;
   transform: scale(0.6);
+}
+
+#search {
+    padding-left: 20px;
 }
 
 #s-circle {
@@ -82,6 +104,7 @@
 
 .searchbar-btn span:before,
 .searchbar-btn span:after {
+<<<<<<< HEAD
   content: "";
   position: absolute;
   bottom: 0;
@@ -92,6 +115,24 @@
   border-radius: 10px;
   transform: rotateZ(0);
   transition: 0.5s ease all;
+=======
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 10px;
+    transform: rotateZ(0);
+    transition: 0.5s ease all;
+>>>>>>> b31f48e1db01767b1c325056842f5ce846fe547b
+}
+
+#s-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #s-cover:hover #s-circle {
@@ -103,6 +144,7 @@
   border-radius: 20px;
 }
 
+<<<<<<< HEAD
 #s-cover:hover span {
   top: 50%;
   left: 56px;
@@ -125,4 +167,30 @@
   right: -6px;
   width: 40px;
   background-color: #fff;
+=======
+
+#s-cover:hover span {
+    top: 50%;
+    left: 56px;
+    width: 25px;
+    margin-top: -9px;
+    transform: rotateZ(0);
+}
+
+#s-cover:hover button span:before {
+    bottom: 11px;
+    transform: rotateZ(52deg);
+}
+
+#s-cover:hover button span:after {
+    bottom: -11px;
+    transform: rotateZ(-52deg);
+}
+
+#s-cover:hover button span:before,
+#s-cover:hover button span:after {
+    right: -6px;
+    width: 40px;
+    background-color: #fff;
+>>>>>>> b31f48e1db01767b1c325056842f5ce846fe547b
 }
