@@ -36,9 +36,10 @@ class SearchBar extends React.Component {
             <div className="td">
               <input
                 type="text"
-                placeholder="Find a surf spot near Los Angeles or Hawaii"
+                placeholder="Find a surf spot near Los Angeles or Oahu"
                 onChange={this.update("search")}
                 className="searchbar"
+                id="search"
               />
             </div>
 
