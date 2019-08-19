@@ -39,6 +39,7 @@
   margin-bottom: 0px;
   font-weight: 600;
   font-size: 25px;
+  text-decoration: none;
 }
 
 .spot_description {
@@ -46,6 +47,7 @@
   color: #303030;
   font-size: 15px;
   margin-right: 3px;
+  text-decoration: none;
 }
 
 .spot_infobar {
@@ -56,6 +58,7 @@
   height: 10%;
   color: seagreen;
   padding-left: 10px;
+  text-decoration: none;
 }
 
 .slider_button_photo {
@@ -83,4 +86,8 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+}
+
+.bottom_half p {
+  text-decoration: none;
 }

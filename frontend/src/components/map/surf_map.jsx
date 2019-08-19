@@ -32,12 +32,16 @@ class SurfMap extends React.Component {
     if (this.MarkerManager) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
-
-    if (this.props.search !== oldProps.search) {
+    if (
+      (this.props.search &&
+        this.props.spots.length > 0 &&
+        oldProps.spots.length > 0 &&
+        this.props.spots[0]._id !== oldProps.spots[0]._id) ||
+      (this.props.spots.length > 0 && oldProps.spots.length === 0)
+    ) {
       const spots = this.props.spots;
-      if (spots.length > 0) {
-        this.moveToLocation(spots[0].lat, spots[0].lng);
-      }
+      this.moveToLocation(spots[0].lat, spots[0].lng);
+      this.props.nullifySearch();
     }
   }
 
@@ -47,13 +51,17 @@ class SurfMap extends React.Component {
 
   listenBounds(map) {
     map.addListener("idle", () => {
-      const bounds = map.getBounds();
-      const bounds_obj = {
-        northEast: { lat: bounds.na.l, lng: bounds.ga.j },
-        southWest: { lat: bounds.na.j, lng: bounds.ga.l }
-      };
-      this.props.updateFilter("bounds", bounds_obj);
+      this.updateMapBounds(MAP);
     });
+  }
+
+  updateMapBounds(map) {
+    const bounds = map.getBounds();
+    const bounds_obj = {
+      northEast: { lat: bounds.na.l, lng: bounds.ga.j },
+      southWest: { lat: bounds.na.j, lng: bounds.ga.l }
+    };
+    this.props.updateFilter("bounds", bounds_obj);
   }
 
   moveToLocation(lat, lng) {
@@ -65,3 +73,13 @@ class SurfMap extends React.Component {
 }
 
 export default SurfMap;
+
+// if (
+//   this.props.spots.length > 0 &&
+//   oldProps.spots.length > 0 &&
+//   this.props.spots[0]._id === oldProps.spots[0]._id &&
+//   this.props.search
+// ) {
+//   this.updateMapBounds(MAP);
+//   this.props.nullifySearch();
+// }

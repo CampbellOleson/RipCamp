@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { getSurfSpots } from "../../actions/surf_spot_actions";
-import { updateFilter } from "../../actions/filter_actions";
+import { updateFilter, nullifySearch } from "../../actions/filter_actions";
 import SurfMap from "./surf_map";
 import SurfSpotsIndex from "../surf_spots/surf_spots_index";
 
@@ -15,7 +15,8 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   getSurfSpots: filter => dispatch(getSurfSpots(filter)),
-  updateFilter: (name, value) => dispatch(updateFilter(name, value))
+  updateFilter: (name, value) => dispatch(updateFilter(name, value)),
+  nullifySearch: () => dispatch(nullifySearch())
 });
 
 export const SurfMapContainer = connect(

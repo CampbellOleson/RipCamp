@@ -18,7 +18,9 @@ class QuickShow extends React.Component {
               <p className="spot_name">{spot.name}</p>
               <p className="spot_description">{spot.description}</p>
             </div>
-            <div className="review_bar">Reviews</div>
+            <div className="review_bar">
+              <p>Reviews</p>
+            </div>
           </div>
         </Link>
       </Link>
