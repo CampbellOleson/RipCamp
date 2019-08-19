@@ -13,8 +13,8 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
-  // .then(SurfSpot.collection.insert(seeds))
-  // .then(console.log("Succesfully seeded MongoDB"));
+// .then(SurfSpot.collection.insert(seeds))
+// .then(console.log("Succesfully seeded MongoDB"));
 
 app.use(passport.initialize());
 

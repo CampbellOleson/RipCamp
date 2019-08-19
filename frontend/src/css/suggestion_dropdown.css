@@ -1,0 +1,11 @@
+.suggestion_dropdown {
+  position: absolute;
+  width: 800px;
+  max-height: 700px;
+  min-height: 100px;
+  overflow-y: scroll;
+  background-color: red;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 3px 3px 6px gray;
+}
