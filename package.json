@@ -11,7 +11,6 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "postinstall": "node app.js"
   },
   "repository": {
     "type": "git",
