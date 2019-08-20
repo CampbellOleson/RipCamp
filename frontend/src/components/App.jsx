@@ -2,7 +2,7 @@ import React from "react";
 import SignupForContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container";
 import { Route } from "react-router-dom";
-import { AuthRoute } from "../util/api_routes_util";
+import { AuthRoute, ProtectedRoute } from "../util/api_routes_util";
 import { SurfSpotsIndexContainer } from "./map/surf_search_container";
 import NavbarContainer from "./nav/navbar_container";
 import SurfSpotShowContainer from "../components/surf_spots/surf_spot_show_container";
@@ -10,12 +10,14 @@ import SurfSpotShowContainer from "../components/surf_spots/surf_spot_show_conta
 const App = () => {
   return (
     <>
-      <Route path="/" component={NavbarContainer} />
+      <ProtectedRoute path="/" component={NavbarContainer} />
       <div className="main">
-        <Route exact path="/" component={SurfSpotsIndexContainer} />
-        <Route exact path="/spots/:spot_id" component={SurfSpotShowContainer} />
+
         <AuthRoute path="/signup" component={SignupForContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
+        <ProtectedRoute exact path="/" component={SurfSpotsIndexContainer} />
+        <ProtectedRoute exact path="/spots/:spot_id" component={SurfSpotShowContainer} />
+
       </div>
     </>
   );

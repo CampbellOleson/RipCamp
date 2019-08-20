@@ -21,6 +21,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: center;
 
   border-bottom: 1px solid lightgray;
 }
@@ -34,6 +35,7 @@
   width: 33%;
   font-weight: 600;
   color: black;
+  font-size: 30px;
 }
 
 .suggestion_city {
@@ -41,8 +43,8 @@
   width: 33%;
   color: darkslategrey;
   font-weight: 450;
-  font-size: 22px;
-  margin-top: 32px;
+  font-size: 25px;
+  /* margin-top: 32px; */
 }
 
 .thumbnail_photo {
@@ -56,4 +58,10 @@
   margin-left: 20px;
   font-weight: 400;
   color: darkslategrey;
+}
+
+.fa-map-marker-alt {
+  color: red;
+  padding-left: 20px;
+  font-size: 40px;
 }
