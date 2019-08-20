@@ -74,9 +74,6 @@ class MarkerManager {
 
     const handleMouseOut = function(e) {
       infoWindow.close();
-<<<<<<< HEAD
-    };
-=======
     }
 
     var mouseout = marker.addListener("mouseout", handleMouseOut, true)
@@ -89,7 +86,6 @@ class MarkerManager {
       this.map.panTo(marker.position)
       this.map.setZoom(15);
     }, true);
->>>>>>> 410854ce816e330acf283a5a0ec853f60ca3d646
 
     var mouseout = marker.addListener("mouseout", handleMouseOut, true);
 
