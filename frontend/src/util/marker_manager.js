@@ -74,7 +74,22 @@ class MarkerManager {
 
     const handleMouseOut = function(e) {
       infoWindow.close();
+<<<<<<< HEAD
     };
+=======
+    }
+
+    var mouseout = marker.addListener("mouseout", handleMouseOut, true)
+
+    marker.addListener("click", function () {
+      infoWindow.open(this.map, marker);
+      GoogleMapsLoader.load(google => {
+        google.maps.event.removeListener(mouseout);
+      })
+      this.map.panTo(marker.position)
+      this.map.setZoom(15);
+    }, true);
+>>>>>>> 410854ce816e330acf283a5a0ec853f60ca3d646
 
     var mouseout = marker.addListener("mouseout", handleMouseOut, true);
 
