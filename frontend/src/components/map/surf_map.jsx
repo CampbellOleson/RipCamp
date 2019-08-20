@@ -96,7 +96,7 @@ class SurfMap extends React.Component {
     ];
     const mapOptions = {
       center: { lat: lat, lng: lng },
-      zoom: 9,
+      zoom: 4,
       styles: styles
     };
     GoogleMapsLoader.load(google => {
