@@ -18,7 +18,7 @@ class SurfMap extends React.Component {
     const lng = spot ? spot.lng : -118.50079;
     const mapOptions = {
       center: { lat: lat, lng: lng },
-      zoom: 10
+      zoom: 9
     };
     GoogleMapsLoader.load(google => {
       MAP = new google.maps.Map(map, mapOptions);

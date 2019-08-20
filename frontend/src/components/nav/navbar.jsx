@@ -37,7 +37,8 @@ class Navbar extends React.Component {
         <nav className="navbar">
           <div className="left-nav">
             <Link to={"/"} className="logo">
-              <h1>RIPCAMP</h1>
+              <h1>🌊RIPCAMP🌊</h1>
+              
             </Link>
           </div>
           {/* <button onClick={this.handleLogOut}>Log Out</button> */}

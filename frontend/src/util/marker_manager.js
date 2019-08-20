@@ -47,11 +47,11 @@ class MarkerManager {
 
     const contentString =
       '<div id="content">' +
-      '<div id="siteNotice">' +
-      "</div>" +
-      `<h3 id="firstHeading" class="firstHeading">${spot.name}</h3>` +
+      `<img id="content-pic" src=${spot.photos[0]}></img>` +
+      `<h3 id="firstHeading">${spot.name}</h3>` +
       '<div id="bodyContent">' +
       `<p>${spot.description}</p>` +
+      `<p id="difficulty">${spot.difficulty}</p>` +
       "</div>" +
       "</div>";
 
@@ -64,10 +64,13 @@ class MarkerManager {
 
     marker.addListener("click", function() {
       infoWindow.open(this.map, marker);
+      this.map.panTo(marker.position)
+      this.map.setZoom(15);
     });
 
     this.map.addListener("click", function(event) {
       infoWindow.close();
+      this.setZoom(10);
     });
   }
 }

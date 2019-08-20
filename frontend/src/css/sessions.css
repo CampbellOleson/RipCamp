@@ -72,7 +72,7 @@
     justify-content: center;
     display: border-box;
     padding: 20px 13px;
-    margin-bottom: 35px;
+    /* margin-bottom: 35px; */
     transition: all 0.5s;
 
 }
@@ -98,4 +98,33 @@
 @-webkit-keyframes fadein {
     from { opacity: 0 }
     to { opacity: 5 }
+}
+
+.guest-form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #333333;
+    padding: 5px 15px 15px;
+    width: 250px;
+}
+
+.guest-login-btn {
+     width: 100%;
+     background-color: #028090;
+     color: white;
+     font-size: 20px;
+     border-style: none;
+     display: flex;
+     justify-content: center;
+     display: border-box;
+     padding: 20px 13px;
+     margin-bottom: 35px;
+     transition: all 0.5s;
+}
+
+.guest-login-btn:hover {
+    color: #028090;
+    border: 2px solid #028090;
+    background-color: white;
 }

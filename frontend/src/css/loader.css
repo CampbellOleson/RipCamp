@@ -1,3 +1,8 @@
+* {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
 @import "./index.css";
 @import "./navbar.css";
 @import "./quickshow.css";
@@ -6,4 +11,5 @@
 @import "./footer.css";
 @import "./map.css";
 @import "./searchbar.css";
+@import "./weather.css";
 @import "./suggestion_dropdown.css";

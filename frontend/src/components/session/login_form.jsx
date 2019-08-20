@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuestLogin = this.handleGuestLogin.bind(this);
     this.state = {
       email: "",
       password: ""
@@ -46,6 +47,9 @@ class LoginForm extends React.Component {
           />
           <button type="submit" className="session-submit">Log In</button>
         </form>
+        <form className="guest-form" onSubmit={this.handleGuestLogin}>
+          <input type="submit" value="Guest Login" className="guest-login-btn"/>
+          </form>
         <div className="session-footer">
           <Link to="/signup">
             <p>Don't have an account? Create One</p>
@@ -59,6 +63,12 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state);
+  }
+
+  handleGuestLogin(e) {
+    e.preventDefault();
+    const guest = { email: "guest@gmail.com", password: "password"}
+    this.props.login(guest).then(() => this.props.history.push('/'));
   }
 
   handleChange(e) {

@@ -3,8 +3,9 @@ export const RECEIVE_SURF_SPOTS = "RECEIVE_SURF_SPOTS";
 export const RECEIVE_SINGLE_SURF_SPOT = "RECEIVE_SINGLE_SURF_SPOT ";
 export const RECEIVE_SURF_SPOT_ERRORS = "RECEIVE_SURF_SPOT_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEWS";
-export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
+//export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 export const RECEIVE_SEARCH_SUGGESTIONS = "RECEIVE_SEARCH_SUGGESTIONS";
+
 
 const receiveSurfSpots = spots => ({
   type: RECEIVE_SURF_SPOTS,
@@ -26,10 +27,13 @@ const receiveReview = review => ({
   review
 });
 
+
+
 const receiveSearchSuggestions = suggestions => ({
   type: RECEIVE_SEARCH_SUGGESTIONS,
   suggestions
 });
+
 
 // const receiveSearch = searchResults => ({
 //   type: RECEIVE_SEARCH,
