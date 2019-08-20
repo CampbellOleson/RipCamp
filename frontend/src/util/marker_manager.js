@@ -78,12 +78,12 @@ class MarkerManager {
     var mouseout = marker.addListener("mouseout", handleMouseOut, true)
 
     marker.addListener("click", function () {
+      infoWindow.open(this.map, marker);
       GoogleMapsLoader.load(google => {
         google.maps.event.removeListener(mouseout);
       })
       this.map.panTo(marker.position)
       this.map.setZoom(15);
-      infoWindow.open(this.map, marker);
     }, true);
 
     this.map.addListener("click", function (event) {

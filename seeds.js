@@ -1,5 +1,3 @@
-
-
 const names = [
   "big sur",
   "sharks cove",
@@ -92,36 +90,36 @@ photos["banzai pipeline"] = [
 ];
 
 lat = [
-  34.006951,
-  33.970524,
-  33.89579,
-  33.827947,
-  33.7933,
-  33.769399,
-  33.738833,
-  33.604882,
-  33.719811,
-  21.620481,
-  21.603613,
-  33.711100,
-  33.741542,
-  21.664746
+  36.257122, //big sur 
+  37.003375, //sharks cove
+  -33.767093, //riptide
+  -17.609203, // coral reef
+  34.008623, // santa monica
+  34.000105, // pirates bay
+  -8.084848, // club dolphin
+  25.617397, //davy jones locker
+  25.583959, // bootstrap bill
+  21.618939, // chuns reef
+  21.597360, // haleiwa
+  39.604582, // nazare
+  -28.001068, // surfer's paradise
+  21.664916 // banzai pipeline
 ];
 lng = [
-  -118.499958,
-  -118.464906,
-  -118.420302,
-  -118.392946,
-  -118.409029,
-  -118.424309,
-  -118.112673,
-  -118.113567,
-  -118.327859,
-  -158.084705,
-  -158.106276,
-  -118.283311,
-  -118.379353,
-  -158.05309
+  -121.829201, // big sur
+  -122.186819, // sharks cove
+  151.300328, // riptide
+  146.288964, // coral reef
+  -118.505304, // santa monica
+  -118.809428, // pirates bay
+  114.966521, // club dolphin
+  -71.176685, // davy jones locker
+  -80.107409, // bootstrap bill
+  -158.085638, // chuns reef
+  -158.104160, // haleiwa
+  -9.069669, // nazare
+  153.432702, // surfers paradise
+  -158.052918 // banzai pipeline
 ];
 
 const oahuNames = ["chuns reef", "banzai pipeline", "haleiwa"];
@@ -145,32 +143,29 @@ const intermediateSpots = [
 ];
 
 const descriptions = [
-  "some killer waves",
-  "surf the tsunami",
-  "ride the high tide",
-  "roll in the deep",
-  "rocky waves",
-  "icy waves",
-  "competition central",
-  "free boards here",
-  "a place for free surf coaching",
-  "The hottest place on Earth",
-  "Surf with the sharks",
-  "Heaven on Earth",
-  "The only vacation spot you ever need",
-  "Sunshine point"
+  "some killer waves", // big sur
+  "surf the tsunami", // sharks cove
+  "ride the high tide", // riptide
+  "roll in the deep", // coral reef
+  "rocky waves", // santa monica 
+  "icy waves", // pirates bay
+  "competition central", // club dolphin
+  "free boards here", // davy jones locker
+  "a place for free surf coaching", // bootstrap bill
+  "The hottest place on Earth", // chuns reef
+  "Surf with the sharks", // haleiwa
+  "Heaven on Earth", //nazare
+  "The only vacation spot you ever need", // surfer's paradise
+  "Sunshine point" // banzai pipeline
 ];
 
 module.exports = names.map((name, idx) => ({
   name: name,
   description: descriptions[idx],
-  difficulty: dangerousSpots.includes(name)
-    ? "dangerous"
-    : intermediateSpots.includes(name)
-    ? "intermediate"
-    : difficultSpots.includes(name)
-    ? "difficult"
-    : "beginner",
+  difficulty: dangerousSpots.includes(name) ?
+    "dangerous" : intermediateSpots.includes(name) ?
+    "intermediate" : difficultSpots.includes(name) ?
+    "difficult" : "beginner",
   city: oahuNames.includes(name) ? "Oahu" : "Los Angeles",
   lat: lat[idx],
   lng: lng[idx],
