@@ -28,6 +28,7 @@
   flex-direction: row;
   justify-content: space-around;
   width: 200px;
+  margin-top: 1em;
 }
 
 .show-location p {
@@ -36,7 +37,7 @@
 
 .city-link {
   color: black;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   font-size: 15px;
   text-decoration: none;
 }
@@ -102,40 +103,27 @@
   background-color: #111111;
 }
 
-.reveiws-link {
+.reviews-container {
+
+}
+
+.reviews-link {
   margin-top: 20px;
   color: seagreen;
   text-decoration: none;
 }
 
-.reveiws-link:hover {
+.reviews-link:hover {
   text-decoration: underline;
 }
 
 .content-inner {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   height: 500px;
 }
 
-.conditions-wrapper {
-  /* width: 30%;
-  height: 40%;
-  margin-top: 30px; */
-  width: 300px;
-  height: 300px;
-  margin: 20px;
-  border-radius: 8px;
-  border: 1px solid gray;
-  box-shadow: inset 0 0 0 7px rgba(255,255,255,.5);
-  background-image: radial-gradient(center 0, circle farthest-corner, rgba(255,255,255,0.4), rgba(255,255,255,0));
-  background-color: whitesmoke;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 .show-content-wrapper {
   margin-left: 70px;

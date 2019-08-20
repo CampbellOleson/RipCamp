@@ -4,7 +4,8 @@ class SearchBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      search: ""
+      search: "",
+      city: "los angeles"
     };
 
     // this.handleChange = this.handleChange.bind(this);
@@ -13,7 +14,14 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateFilter("search", this.state.search);
+    if (this.state.search === "") {
+      const selectedValue = document.getElementById("city-search").value
+      console.log(selectedValue);
+
+    } else {
+      this.props.updateFilter("search", this.state.search);
+
+    }
     // .then(this.props.history.push(`/spots?search=${this.state.search}`));
   }
 
@@ -41,6 +49,13 @@ class SearchBar extends React.Component {
                 className="searchbar"
                 id="search"
               />
+            </div>
+
+            <div className="td" id="city-drop">
+              <select name="city" id="city-search">
+                <option value="los angeles" selected>Los Angeles</option>
+                <option value="oahu">Oahu</option>
+              </select>
             </div>
 
             <div className="td" id="s-cover">

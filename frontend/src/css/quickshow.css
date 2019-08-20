@@ -1,5 +1,5 @@
 .quickshow_container {
-  margin-left: 30px;
+  /* margin-left: 30px; */
   width: 90%;
   height: 300px;
   box-shadow: 2px 2px 4px gray;
@@ -40,6 +40,8 @@
   font-weight: 600;
   font-size: 25px;
   text-decoration: none;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
 }
 
 .spot_description {

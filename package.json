@@ -29,12 +29,15 @@
     "concurrently": "^4.1.1",
     "express": "^4.17.1",
     "google": "^2.1.0",
+    "install": "^0.13.0",
     "jquery": "^3.4.1",
     "jsonwebtoken": "^8.5.1",
     "mongo-seeding-cli": "^3.3.0-alpha.0",
     "mongoose": "^5.6.9",
+    "npm": "^6.10.3",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "request": "^2.88.0",
     "validator": "^11.1.0"
   },
   "devDependencies": {

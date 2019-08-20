@@ -10,6 +10,24 @@
   height: 100%;
 }
 
+#content {
+  /* background-color: pink; */
+  width: 200px;
+  height: 200px;
+}
+
+#firstHeading {
+  text-transform: capitalize;
+}
+
+#difficulty {
+  text-transform: uppercase;
+}
+#content-pic {
+  width: 100%;
+  height: 70%;
+}
+
 /* background: linear-gradient(
     90deg,
     rgba(0, 255, 158, 1) 0%,

@@ -10,16 +10,26 @@
   margin-top: 35px;
   display: flex;
   justify-content: center;
-  filter: brightness(0.8);
+  /* filter: brightness(0.8); */
 
 }
 
 .ripcamp_copyright {
-  padding-left: 46px;
+  /* padding-left: 46px; */
+  letter-spacing: 1px;
 }
 
 .footer-text {
   /* color: #c0c0c0; */
   color: white;
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.footer_message {
+  letter-spacing: 1px
 }

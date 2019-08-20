@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/show.css";
 import { Link } from "react-router-dom";
+import Weather from "../weather/weather";
 
 class SurfSpotShow extends React.Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class SurfSpotShow extends React.Component {
     if (!spot) {
       return null;
     }
-    const photo = this.props.spot.photos[this.state.selectedPhoto];
+    const photo = spot.photos[this.state.selectedPhoto];
     return (
       <div className="spot-show-container">
         <div
@@ -72,7 +73,7 @@ class SurfSpotShow extends React.Component {
         <div className="content-inner">
           <div className="show-content-wrapper">
             <div className="show-location">
-              <Link className="city-link">{spot.city}</Link>
+              <Link to="" className="city-link">{spot.city}</Link>
               <p>{">"}</p>
               <p>{spot.name}</p>
             </div>
@@ -89,20 +90,15 @@ class SurfSpotShow extends React.Component {
               <div className="description">Description: {spot.description}</div>
             </div>
             <br />
-          </div>
-          <div className="conditions-wrapper">
-            <div id="conditions-header">
-              <h2>Conditions</h2>
-            </div>
-            <div className="conditions">
-              <p>It's nice and sunny.</p>
-              <p>Perfect surf weather</p>
+            <div className="reviews-container">
+              <a href="#reviews" className="reviews-link">
+                This is where the reviews will go
+              </a>
             </div>
           </div>
-          <div className="reviews-container">
-            <a href="#reviews" className="reveiws-link">
-              This is where the reviews will go
-            </a>
+          
+          <div className="weather-wrapper">
+              <Weather spot={spot}/>
           </div>
         </div>
       </div>

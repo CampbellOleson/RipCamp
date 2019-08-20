@@ -1,8 +1,8 @@
 .searchbar-container {
     /* width: 40%; */
     padding: 10px;
-    background-color: #2BB5BF;
-    box-shadow: 0 5px 20px #2BB5BF, 0 0 0 15px #ffffffeb;
+    background-color: #48C4DA;
+    box-shadow: 0 5px 20px #48C4DA, 0 0 0 15px #ffffffeb;
     border-radius: 20px;
     transform: scale(0.6);
     margin: 1em;
@@ -55,6 +55,29 @@
 
 #search {
     padding-left: 20px;
+}
+
+#city-drop {
+    margin-left: 10px;
+   
+
+}
+
+#city-search {
+    width: 70%;
+    height: 50px;
+    font-size: 25px;
+    color: white;
+    background-color: #48C4DA;
+    border: 1px solid white;
+}
+
+option {
+    font-size: 10px;
+}
+
+#city-search:focus {
+    outline: none;
 }
 
 #s-circle {
@@ -138,3 +161,4 @@
     width: 40px;
     background-color: #fff;
 }
+

@@ -1,0 +1,71 @@
+
+.weather-wrapper {
+    /* width: 30%;
+  height: 40%;
+  margin-top: 30px; */
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    border-radius: 8px;
+    border: 1px solid gray;
+    box-shadow: inset 0 0 0 7px #00A896;
+    background-image: radial-gradient(center 0, circle farthest-corner, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    background-color: #028090;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #F0F3BD;
+}
+
+
+
+/* .fas {
+    width: 50px;
+    height: 50px;
+    z-index: 5;
+    color: white;
+} */
+
+
+.weather {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather h1, h3, p {
+    margin: 0;
+}
+
+.weather-pic{ 
+    width: 75%;
+    border-radius: 5px;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+
+.weather-pic:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(circle, transparent 20%, red 150%);
+}
+
+.weather-pic:hover:after {
+    background: none;
+}
+
+#conditions {
+    text-transform: uppercase;
+}
+
+#temp {
+    letter-spacing: 2px;
+}
