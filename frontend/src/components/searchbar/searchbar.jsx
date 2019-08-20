@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateFilter("search", this.state.search);
+    this.setState({ search: "" });
   }
 
   update(field) {
@@ -36,6 +37,7 @@ class SearchBar extends React.Component {
                 placeholder="Find a surf spot near Los Angeles or Oahu"
                 onChange={this.update("search")}
                 className="searchbar"
+                value={this.state.search}
                 id="search"
               />
             </div>

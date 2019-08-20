@@ -1,11 +1,59 @@
 .suggestion_dropdown {
   position: absolute;
-  width: 800px;
+  top: 118px;
+  margin-left: 20px;
+  width: 700px;
   max-height: 700px;
-  min-height: 100px;
+  min-height: 89px;
   overflow-y: scroll;
   background-color: red;
   border-radius: 4px;
   background-color: white;
   box-shadow: 3px 3px 6px gray;
+  font-size: 28px;
+}
+
+.suggestion_link {
+  text-decoration: none;
+}
+
+.suggestion_content_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+
+  border-bottom: 1px solid lightgray;
+}
+
+.suggestion_content_container:hover {
+  background: whitesmoke;
+}
+
+.suggestion_name {
+  margin-left: 20px;
+  width: 33%;
+  font-weight: 600;
+  color: black;
+}
+
+.suggestion_city {
+  margin-left: 70px;
+  width: 33%;
+  color: darkslategrey;
+  font-weight: 450;
+  font-size: 22px;
+  margin-top: 32px;
+}
+
+.thumbnail_photo {
+  width: 75px;
+  height: 75px;
+  margin: 6px;
+  border-radius: 2px;
+}
+
+#no_search_results {
+  margin-left: 20px;
+  font-weight: 400;
+  color: darkslategrey;
 }
