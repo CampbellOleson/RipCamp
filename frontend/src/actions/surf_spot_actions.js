@@ -56,7 +56,6 @@ export const getReviews = review => dispatch =>
     .catch(err => dispatch(receiveSurfSpotErrors(err)));
 
 export const getSearchSuggestions = search => dispatch => {
-  // debugger;
   return ApiSurfSpotsUtil.fetchSurfSpots(search).then(searchResults =>
     dispatch(receiveSearchSuggestions(searchResults.data))
   );

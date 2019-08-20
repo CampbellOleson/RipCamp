@@ -44,7 +44,8 @@ class MarkerManager {
         position: pos,
         map: this.map,
         title: spot.name,
-        id: spot._id
+        id: spot._id,
+        icon: "https://ripcamp-dev.s3-us-west-1.amazonaws.com/myWave.png"
       });
     });
 
@@ -67,26 +68,30 @@ class MarkerManager {
     marker.setMap(this.map);
     this.markers[marker.id] = marker;
 
-    marker.addListener("mouseover", function () {
+    marker.addListener("mouseover", function() {
       infoWindow.open(this.map, marker);
-    })
+    });
 
-    const handleMouseOut = function (e) {
+    const handleMouseOut = function(e) {
       infoWindow.close();
-    }
+    };
 
-    var mouseout = marker.addListener("mouseout", handleMouseOut, true)
+    var mouseout = marker.addListener("mouseout", handleMouseOut, true);
 
-    marker.addListener("click", function () {
-      GoogleMapsLoader.load(google => {
-        google.maps.event.removeListener(mouseout);
-      })
-      this.map.panTo(marker.position)
-      this.map.setZoom(15);
-      infoWindow.open(this.map, marker);
-    }, true);
+    marker.addListener(
+      "click",
+      function() {
+        GoogleMapsLoader.load(google => {
+          google.maps.event.removeListener(mouseout);
+        });
+        this.map.panTo(marker.position);
+        this.map.setZoom(15);
+        infoWindow.open(this.map, marker);
+      },
+      true
+    );
 
-    this.map.addListener("click", function (event) {
+    this.map.addListener("click", function(event) {
       infoWindow.close();
       marker.addListener("mouseout", handleMouseOut);
       this.setZoom(10);
@@ -94,28 +99,31 @@ class MarkerManager {
 
     function quickshowHighlight() {
       const quickshow = document.getElementById(marker.id);
-      const sliderButton1 = quickshow.children[0].children[0].children[0].children[0]
-      const sliderButton2 = quickshow.children[0].children[0].children[0].children[1]
+      const sliderButton1 =
+        quickshow.children[0].children[0].children[0].children[0];
+      const sliderButton2 =
+        quickshow.children[0].children[0].children[0].children[1];
       sliderButton1.classList.add("active_marker_buttons");
       sliderButton2.classList.add("active_marker_buttons");
-      quickshow.classList.add("active_marker")
-      quickshow.parentNode.scrollTop = quickshow.offsetTop - quickshow.parentNode.offsetTop;
+      quickshow.classList.add("active_marker");
+      quickshow.parentNode.scrollTop =
+        quickshow.offsetTop - quickshow.parentNode.offsetTop;
     }
-    
+
     function quickshowRemove() {
       const quickshow = document.getElementById(marker.id);
-      const sliderButton1 = quickshow.children[0].children[0].children[0].children[0]
-      const sliderButton2 = quickshow.children[0].children[0].children[0].children[1]
+      const sliderButton1 =
+        quickshow.children[0].children[0].children[0].children[0];
+      const sliderButton2 =
+        quickshow.children[0].children[0].children[0].children[1];
       sliderButton1.classList.remove("active_marker_buttons");
       sliderButton2.classList.remove("active_marker_buttons");
-      quickshow.classList.remove("active_marker")
+      quickshow.classList.remove("active_marker");
     }
 
-    marker.addListener("mouseover", quickshowHighlight)
-    marker.addListener("mouseout", quickshowRemove)
-
+    marker.addListener("mouseover", quickshowHighlight);
+    marker.addListener("mouseout", quickshowRemove);
   }
-
 }
 
 export default MarkerManager;

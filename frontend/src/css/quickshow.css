@@ -6,12 +6,11 @@
   margin-bottom: 30px;
   border-radius: 5px;
   background-color: white;
-    transition-duration: 1s;
-
+  transition-duration: 1s;
 }
 
 .quickshow_container:hover {
-  background-color: whitesmoke;
+  background-color: #f0f0f0;
 }
 
 .quickshow_photobar {
@@ -77,7 +76,7 @@
   z-index: 10;
 }
 
-.slider_button_container:hover .slider_button {
+.quickshow_container:hover .slider_button {
   display: block;
 }
 
@@ -101,5 +100,5 @@
 }
 
 .active_marker {
-  background-color: whitesmoke;
+  background-color: #f0f0f0;
 }
