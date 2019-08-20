@@ -6,6 +6,8 @@
   margin-bottom: 30px;
   border-radius: 5px;
   background-color: white;
+    transition-duration: 1s;
+
 }
 
 .quickshow_container:hover {
@@ -79,6 +81,10 @@
   display: block;
 }
 
+.active_marker_buttons {
+  display: block;
+}
+
 .slider_button_container {
   width: 100%;
   height: 100%;
@@ -92,4 +98,8 @@
 
 .bottom_half p {
   text-decoration: none;
+}
+
+.active_marker {
+  background-color: whitesmoke;
 }

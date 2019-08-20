@@ -37,7 +37,7 @@ class Navbar extends React.Component {
         <nav className="navbar">
           <div className="left-nav">
             <Link to={"/"} className="logo">
-              <h1>RIPCAMP<i class="fas fa-tint fa-sm"></i></h1>
+              <h1>RIPCAMP<i className="fas fa-tint fa-sm"></i></h1>
               
             </Link>
           </div>

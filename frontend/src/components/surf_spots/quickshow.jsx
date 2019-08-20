@@ -3,11 +3,8 @@ import { Link } from "react-router-dom";
 import QuickShowSlider from "./quickshow_slider";
 
 class QuickShow extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  // }
 
-  render() {
+  render() { 
     const spot = this.props.spot;
     return (
       <Link className="quickshow_container" id={spot._id} to={`/spots/${spot._id}`}>

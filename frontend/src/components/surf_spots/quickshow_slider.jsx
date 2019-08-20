@@ -28,10 +28,12 @@ class QuickShowSlider extends React.Component {
     }else{
       this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length }
       )
-    
-    // this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length});
+    }
   }
-}
+  
+  hoverOver() {
+    const marker = document.getElementById(this.props.spot._id)
+  }
 
   render() {
     const photo = this.props.spot.photos[this.state.selectedPhoto];
@@ -62,18 +64,3 @@ class QuickShowSlider extends React.Component {
 }
 
 export default QuickShowSlider;
-
-// // <div className="quickshow_photobar">
-//   {/* {props.spot.photos.map((p, idx) => {
-//     <span className={`slider-image-${idx}`} />;
-//   })} */}
-//   <div
-//     className="image-container"
-//     // style={{ width: "90%" }} //`${100 * props.spot.photos.length}%`
-//   >
-//     {props.spot.photos.map(photo => {
-//       return <img src={`${photo}`} className="slider-image" />;
-//     })}
-//   </div>
-//   {/* <div className="slider-button-container" /> */}
-// // </div>
