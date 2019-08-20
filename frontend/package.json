@@ -19,6 +19,7 @@
   },
   "proxy": "http://localhost:5000",
   "scripts": {
+    "postinstall": "webpack --mode=production",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
