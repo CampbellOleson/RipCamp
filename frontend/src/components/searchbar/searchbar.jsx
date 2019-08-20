@@ -1,4 +1,5 @@
 import React from "react";
+import SuggestionDropdown from "./suggestion_dropdown";
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -7,13 +8,13 @@ class SearchBar extends React.Component {
       search: "",
       city: "los angeles"
     };
-
-    // this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.suggestionDropdown = this.suggestionDropdown.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
+
     if (this.state.search === "") {
       const selectedValue = document.getElementById("city-search").value
       console.log(selectedValue);
@@ -27,12 +28,18 @@ class SearchBar extends React.Component {
 
   componentDidUpdate() {
     // this.props.updateFilter("search", this.state.search);
+
+    this.props.updateFilter("search", this.state.search);
+    this.setState({ search: "" });
+
   }
 
-    update(field) {
-    // this.props.getSearchSuggestions() -- For dynamic dropdown
+  update(field) {
     return e => {
-      this.setState({ [field]: e.target.value });
+      this.setState({ [field]: e.target.value }, () => {
+        const search_obj = { search: this.state.search };
+        this.props.getSearchSuggestions(search_obj);
+      });
     };
   }
 
@@ -47,6 +54,7 @@ class SearchBar extends React.Component {
                 placeholder="Find a surf spot near Los Angeles or Oahu"
                 onChange={this.update("search")}
                 className="searchbar"
+                value={this.state.search}
                 id="search"
               />
             </div>
@@ -70,8 +78,15 @@ class SearchBar extends React.Component {
             </div>
           </div>
         </form>
+        {this.suggestionDropdown()}
       </div>
     );
+  }
+
+  suggestionDropdown() {
+    return this.state.search ? (
+      <SuggestionDropdown suggestions={this.props.suggestions} />
+    ) : null;
   }
 }
 

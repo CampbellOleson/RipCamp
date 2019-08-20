@@ -16,8 +16,6 @@ export function updateFilter(filter, value) {
   };
 }
 
-// const getSearchSuggestions = ()
-
 export const nullifySearch = () => ({
   type: NULLIFY_SEARCH
 });
