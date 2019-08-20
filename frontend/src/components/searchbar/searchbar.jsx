@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       search: "",
-      city: "los angeles"
+      city: "Los Angeles"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.suggestionDropdown = this.suggestionDropdown.bind(this);
@@ -16,9 +16,11 @@ class SearchBar extends React.Component {
     e.preventDefault();
 
     if (this.state.search === "") {
-      const selectedValue = document.getElementById("city-search").value
-      console.log(selectedValue);
-
+      const selectedCity = document.getElementById("city-search").value
+      this.setState({city: selectedCity})
+    //   console.log(selectedValue);
+      // this.props.spots.filter(spot => spot.city === selectedCity)
+      this.props.updateFilter("search", this.state.city);
     } else {
       this.props.updateFilter("search", this.state.search);
 
@@ -29,8 +31,8 @@ class SearchBar extends React.Component {
   componentDidUpdate() {
     // this.props.updateFilter("search", this.state.search);
 
-    this.props.updateFilter("search", this.state.search);
-    this.setState({ search: "" });
+    // this.props.updateFilter("search", this.state.search);
+    // this.setState({ search: "" });
 
   }
 
@@ -61,8 +63,9 @@ class SearchBar extends React.Component {
 
             <div className="td" id="city-drop">
               <select name="city" id="city-search">
-                <option value="los angeles" selected>Los Angeles</option>
-                <option value="oahu">Oahu</option>
+                <option value="City" disabled>City</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Oahu">Oahu</option>
               </select>
             </div>
 

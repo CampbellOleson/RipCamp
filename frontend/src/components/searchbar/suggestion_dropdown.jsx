@@ -5,6 +5,7 @@ const SuggestionIndexItem = props => (
   <div className="suggestion_index_item">
     <Link className="suggestion_link" to={`spots/${props.suggestion._id}`}>
       <div className="suggestion_content_container">
+        <i class="fas fa-map-marker-alt"></i>
         <p className="suggestion_name">{props.suggestion.name}</p>
         <p className="suggestion_city">{props.suggestion.city}</p>
         <img src={props.suggestion.photos[0]} className="thumbnail_photo" />
