@@ -13,14 +13,11 @@ class MarkerManager {
       if (!this.markers[spot._id]) {
         this.createMarkerFromSpot(spot);
       }
-      // console.log(this.markers)
     });
 
     const spotObj = {};
-    //remove old markers
     spots.map(spot => (spotObj[spot._id] = spot));
     Object.keys(this.markers).map(markerId => {
-      // if there is an outdated marker remove it
       if (!spotObj[markerId]) {
         this.removeMarker(this.markers[markerId]);
       }
@@ -87,20 +84,6 @@ class MarkerManager {
       this.map.setZoom(15);
     }, true);
 
-    var mouseout = marker.addListener("mouseout", handleMouseOut, true);
-
-    marker.addListener(
-      "click",
-      function() {
-        GoogleMapsLoader.load(google => {
-          google.maps.event.removeListener(mouseout);
-        });
-        this.map.panTo(marker.position);
-        this.map.setZoom(15);
-        infoWindow.open(this.map, marker);
-      },
-      true
-    );
 
     this.map.addListener("click", function(event) {
       infoWindow.close();

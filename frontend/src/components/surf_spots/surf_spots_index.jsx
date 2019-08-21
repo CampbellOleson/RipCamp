@@ -1,6 +1,5 @@
 import React from "react";
 import QuickShowContainer from "./quickshow_container";
-import "../../css/index.css";
 import Footer from "../footer/footer";
 import { SurfMapContainer } from "../map/surf_search_container";
 import SearchBar from "../searchbar/searchbar_container";
@@ -49,13 +48,3 @@ class SurfSpotsIndex extends React.Component {
 }
 
 export default SurfSpotsIndex;
-
-// allSurfSpots() { */}
-//    const keys = Object.keys(this.props.spots);
-//   const spots = keys.map(key => { */}
-//    return this.props.spots[key];
-//   });
-//   return spots.map((spot, idx) => (
-//      <QuickShowContainer spot={spot} key={idx} />
-//    ));
-// } }

@@ -1,5 +1,4 @@
 .quickshow_container {
-  /* margin-left: 30px; */
   width: 90%;
   height: 300px;
   box-shadow: 2px 2px 4px gray;
@@ -108,5 +107,5 @@
 }
 
 .active_marker {
-  background-color: #f0f0f0;
+  background-color: #48c4da;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import '../../css/sessions.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -81,7 +80,7 @@ class SignupForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-    const guest = { email: "guest@gmail.com", password: "password" }
+    const guest = { email: "Spongebob@bikinibottom.com", password: "password" }
     this.props.login(guest).then(() => this.props.history.push('/'));
   }
 

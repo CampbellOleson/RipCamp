@@ -1,5 +1,4 @@
 import React from "react";
-import "../../css/show.css";
 import { Link } from "react-router-dom";
 import Weather from "../weather/weather";
 
@@ -35,8 +34,6 @@ class SurfSpotShow extends React.Component {
       this.setState({ selectedPhoto: temp % length });
     } else {
       this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length });
-
-      // this.setState({ selectedPhoto: Math.abs(prevPhoto - 1) % length});
     }
   }
 
