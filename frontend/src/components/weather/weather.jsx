@@ -22,7 +22,7 @@ class Weather extends React.Component {
             if (err) {
                 console.log('error:', err);
             } else {
-                console.log('body:', body);
+                // console.log('body:', body);
                 let weather = JSON.parse(body)
                 // let weatherr = JSON.parse(body)
                 this.setState((state) => {
