@@ -8,7 +8,7 @@ const SuggestionIndexItem = props => (
         <i class="fas fa-map-marker-alt"></i>
         <p className="suggestion_name">{props.suggestion.name}</p>
         <p className="suggestion_city">{props.suggestion.city}</p>
-        <img src={props.suggestion.photos[0]} className="thumbnail_photo" />
+        <img src={props.suggestion.photos[0]} className="thumbnail_photo" alt=""/>
       </div>
     </Link>
   </div>

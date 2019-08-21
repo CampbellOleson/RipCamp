@@ -37,17 +37,3 @@ router.get("/spots/:spot_id", (req, res) => {
 });
 
 module.exports = router;
-
-// SurfSpot.find({
-//   lat: { $gt: seLat, $lt: nwLat },
-//   lng: { $gt: nwLng, $lt: seLng }
-// }).then(spots => {
-//   const spots_obj = {};
-//   spots.forEach(spot => (spots_obj[spot.id] = spot));
-//   if (spots && spots.length > 0) {
-//     res.json(spots_obj);
-//   } else {
-//     res.status(404);
-//     res.json({ msg: "There are no surf spots in your area." });
-//   }
-// });

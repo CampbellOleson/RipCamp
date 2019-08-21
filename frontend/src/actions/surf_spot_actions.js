@@ -28,17 +28,11 @@ const receiveReview = review => ({
 });
 
 
-
 const receiveSearchSuggestions = suggestions => ({
   type: RECEIVE_SEARCH_SUGGESTIONS,
   suggestions
 });
 
-
-// const receiveSearch = searchResults => ({
-//   type: RECEIVE_SEARCH,
-//   searchResults
-// });
 
 export const getSurfSpots = filter => dispatch =>
   ApiSurfSpotsUtil.fetchSurfSpots(filter)
@@ -60,6 +54,3 @@ export const getSearchSuggestions = search => dispatch => {
     dispatch(receiveSearchSuggestions(searchResults.data))
   );
 };
-
-window.getSurfSpots = getSurfSpots;
-window.getSingleSurfSpot = getSingleSurfSpot;

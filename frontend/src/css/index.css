@@ -9,8 +9,6 @@
 .surf-greeting {
   display: flex;
   flex-direction: column;
-  /* position: fixed;
-  top: 0; */
 }
 
 .surf-index-container h1 {
@@ -36,13 +34,10 @@
   height: min-content;
   width: 55%;
   overflow-y: scroll;
-  /* height:750px; */
   height: 75vh;
   line-height: 1.5;
   color: #333333;
   box-sizing: border-box;
-  /* padding-top: 20px; */
-  /* padding-left: 10px; */
   display: grid;
   grid-template-columns: 50% 50%;
 }

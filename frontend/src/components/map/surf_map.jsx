@@ -152,13 +152,3 @@ class SurfMap extends React.Component {
 }
 
 export default SurfMap;
-
-// if (
-//   this.props.spots.length > 0 &&
-//   oldProps.spots.length > 0 &&
-//   this.props.spots[0]._id === oldProps.spots[0]._id &&
-//   this.props.search
-// ) {
-//   this.updateMapBounds(MAP);
-//   this.props.nullifySearch();
-// }
