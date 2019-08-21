@@ -13,6 +13,7 @@ class QuickShow extends React.Component {
           <div className="bottom_half">
             <div className="spot_infobar">
               <p className="spot_name">{spot.name}</p>
+              <p className="spot_city">{spot.city}</p>
               <p className="spot_description">{spot.description}</p>
             </div>
             <div className="review_bar">

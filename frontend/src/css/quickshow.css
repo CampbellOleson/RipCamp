@@ -53,6 +53,14 @@
   text-decoration: none;
 }
 
+.spot_city {
+  margin-top: 0px;
+  color: #303030;
+  font-size: 15px;
+  margin-right: 3px;
+  text-decoration: none;
+}
+
 .spot_infobar {
   padding-left: 12px;
 }
