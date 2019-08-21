@@ -17,22 +17,19 @@ class SearchBar extends React.Component {
 
     if (this.state.search === "") {
       const selectedCity = document.getElementById("city-search").value
-
       this.setState({city: selectedCity})
+
       this.props.updateFilter("search", this.state.city);
     } else {
       this.props.updateFilter("search", this.state.search);
-
     }
     // .then(this.props.history.push(`/spots?search=${this.state.search}`));
   }
 
   componentDidUpdate() {
     // this.props.updateFilter("search", this.state.search);
-
     // this.props.updateFilter("search", this.state.search);
     // this.setState({ search: "" });
-
   }
 
   update(field) {
