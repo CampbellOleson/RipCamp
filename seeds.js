@@ -1,6 +1,7 @@
 const names = [
   "big sur",
   "sharks cove",
+  "surfer's paradise",
   "riptide",
   "coral reef",
   "santa monica",
@@ -11,7 +12,6 @@ const names = [
   "chuns reef",
   "haleiwa",
   "nazare",
-  "surfer's paradise",
   "banzai pipeline"
 ];
 
@@ -92,6 +92,7 @@ photos["banzai pipeline"] = [
 lat = [
   36.257122, //big sur 
   37.003375, //sharks cove
+  -28.001068, // surfer's paradise
   -33.767093, //riptide
   -17.609203, // coral reef
   34.008623, // santa monica
@@ -102,12 +103,12 @@ lat = [
   21.618939, // chuns reef
   21.597360, // haleiwa
   39.604582, // nazare
-  -28.001068, // surfer's paradise
   21.664916 // banzai pipeline
 ];
 lng = [
   -121.829201, // big sur
   -122.186819, // sharks cove
+  153.432702, // surfers paradise
   151.300328, // riptide
   146.288964, // coral reef
   -118.505304, // santa monica
@@ -118,11 +119,15 @@ lng = [
   -158.085638, // chuns reef
   -158.104160, // haleiwa
   -9.069669, // nazare
-  153.432702, // surfers paradise
   -158.052918 // banzai pipeline
 ];
 
 const oahuNames = ["chuns reef", "banzai pipeline", "haleiwa"];
+const bayarea = ["big sur", "sharks cove"];
+const florida = ["bootstrap bill", "davy jones locker"];
+const portugal = ["nazare"];
+const indonesia = ["club dolphin"];
+const australia = ["coral reef", "surfer's paradise", "riptide"];
 
 const dangerousSpots = [
   "chuns reef",
@@ -145,6 +150,7 @@ const intermediateSpots = [
 const descriptions = [
   "some killer waves", // big sur
   "surf the tsunami", // sharks cove
+  "The only vacation spot you ever need", // surfer's paradise
   "ride the high tide", // riptide
   "roll in the deep", // coral reef
   "rocky waves", // santa monica 
@@ -155,7 +161,6 @@ const descriptions = [
   "The hottest place on Earth", // chuns reef
   "Surf with the sharks", // haleiwa
   "Heaven on Earth", //nazare
-  "The only vacation spot you ever need", // surfer's paradise
   "Sunshine point" // banzai pipeline
 ];
 
@@ -166,7 +171,19 @@ module.exports = names.map((name, idx) => ({
     "dangerous" : intermediateSpots.includes(name) ?
     "intermediate" : difficultSpots.includes(name) ?
     "difficult" : "beginner",
-  city: oahuNames.includes(name) ? "Oahu" : "Los Angeles",
+  city: oahuNames.includes(name) ? "Oahu"
+    :
+    bayarea.includes(name) ? "Bay Area"
+      :
+      florida.includes(name) ? "Florida"
+        :
+        portugal.includes(name) ? "Portugal"
+          :
+          indonesia.includes(name) ? "Indonesia"
+            :
+            australia.includes(name) ? "Australia"
+              :
+              "Los Angeles",
   lat: lat[idx],
   lng: lng[idx],
   photos: photos[name]
