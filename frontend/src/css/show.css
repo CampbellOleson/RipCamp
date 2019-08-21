@@ -38,7 +38,6 @@
 
 .city-link {
   color: black;
-  /* margin-top: 15px; */
   font-size: 15px;
   text-decoration: none;
 }
@@ -102,10 +101,6 @@
 
 .black {
   background-color: #111111;
-}
-
-.reviews-container {
-
 }
 
 .reviews-link {

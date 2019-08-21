@@ -22,9 +22,7 @@ class Weather extends React.Component {
             if (err) {
                 console.log('error:', err);
             } else {
-                // console.log('body:', body);
                 let weather = JSON.parse(body)
-                // let weatherr = JSON.parse(body)
                 this.setState((state) => {
                     return {
                         temp: weather.main.temp,
@@ -32,7 +30,6 @@ class Weather extends React.Component {
                         speed: weather.wind.speed,
                         dir: weather.wind.deg,
                         humidity: weather.main.humidity,
-                        // weather: weather.main
                     }
                 })
             }
@@ -48,15 +45,6 @@ class Weather extends React.Component {
     render() {
         const { conditions, temp, speed, dir, humidity } = this.state;
 
-        const sky =
-            this.state.conditions ?
-                this.state.conditions.includes("cloud") ?
-                    "https://ripcamp-dev.s3-us-west-1.amazonaws.com/cloudy.jpg"
-                :
-                "https://ripcamp-dev.s3-us-west-1.amazonaws.com/clear-sky.jpg"
-                : null;
-        
-                
         const icon = 
             this.state.conditions ?
                 this.state.conditions.includes("cloud") ?
@@ -68,13 +56,11 @@ class Weather extends React.Component {
         
         return (
             <div className="weather">
-                {/* <img src={sky} alt="" className="weather-pic"/> */}
                 {icon}
                 <h1 id="temp">{temp}&#176;F</h1>
                 <p id="conditions">{conditions}</p>
                 <p id="wind-speed">Wind: {speed} mph at {dir} &#176;</p>
                 <p>Humidity: {humidity} g/m<sup>3</sup></p>
-            
             </div>
         )
     }

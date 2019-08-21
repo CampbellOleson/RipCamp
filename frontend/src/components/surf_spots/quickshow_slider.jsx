@@ -30,10 +30,6 @@ class QuickShowSlider extends React.Component {
       )
     }
   }
-  
-  hoverOver() {
-    const marker = document.getElementById(this.props.spot._id)
-  }
 
   render() {
     const photo = this.props.spot.photos[this.state.selectedPhoto];

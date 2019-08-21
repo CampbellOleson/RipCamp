@@ -1,11 +1,10 @@
 .searchbar-container {
-    /* width: 40%; */
-    padding: 10px;
-    background-color: #48C4DA;
-    box-shadow: 0 5px 20px #48C4DA, 0 0 0 15px #ffffffeb;
-    border-radius: 20px;
-    transform: scale(0.6);
-    margin: 1em;
+  padding: 10px;
+  background-color: #48C4DA;
+  box-shadow: 0 5px 20px #48C4DA, 0 0 0 15px #ffffffeb;
+  border-radius: 20px;
+  transform: scale(0.6);
+  margin: 1em;
   z-index: 12;
 }
 
@@ -59,9 +58,7 @@
 }
 
 #city-drop {
-    margin-left: 10px;
-   
-
+  margin-left: 10px;
 }
 
 #city-search {

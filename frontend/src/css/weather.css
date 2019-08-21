@@ -1,8 +1,5 @@
 
 .weather-wrapper {
-    /* width: 30%;
-  height: 40%;
-  margin-top: 30px; */
     width: 300px;
     height: 300px;
     margin: 20px;
@@ -17,15 +14,6 @@
     align-items: center;
     color: #F0F3BD;
 }
-
-
-
-/* .fas {
-    width: 50px;
-    height: 50px;
-    z-index: 5;
-    color: white;
-} */
 
 
 .weather {
