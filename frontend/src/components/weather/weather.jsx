@@ -16,7 +16,7 @@ class Weather extends React.Component {
 
     weatherBalloon(lat, lng) {
         var apiKey = '0dcf4810c5eab930389294cf28665b02';
-        let url = `http://api.openweathermap.org/data/2.5/weather?lat=${Math.floor(lat)}&lon=${Math.floor(lng)}&units=imperial&appid=${apiKey}`;
+        let url = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${Math.floor(lat)}&lon=${Math.floor(lng)}&units=imperial&appid=${apiKey}`;
 
         request(url,  (err, response, body) => {
             if (err) {
