@@ -89,7 +89,16 @@ class MarkerManager {
     this.map.addListener("click", function (event) {
       infoWindow.close();
       marker.addListener("mouseout", handleMouseOut);
-      this.setZoom(10);
+
+      const city = document.getElementById("city-search").value;
+      if (!["City", "Australia", "Florida"].includes(city)) {
+        if (city === "Bay Area") {
+          this.setZoom(8);
+        }
+        this.setZoom(10)
+      } else {
+        this.setZoom(5);
+      }
     });
 
     function quickshowHighlight() {
