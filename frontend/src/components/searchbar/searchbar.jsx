@@ -18,7 +18,6 @@ class SearchBar extends React.Component {
     if (this.state.search === "") {
       const selectedCity = document.getElementById("city-search").value;
       this.setState({ city: selectedCity });
-      //   console.log(selectedValue);
       // this.props.spots.filter(spot => spot.city === selectedCity)
       this.props.updateFilter("search", this.state.city);
     } else {
