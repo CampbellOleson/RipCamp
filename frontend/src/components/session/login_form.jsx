@@ -15,11 +15,10 @@ class LoginForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push("/tweets");
     }
 
-    this.setState({ errors: nextProps.errors })
-
+    this.setState({ errors: nextProps.errors });
   }
 
   render() {
@@ -44,16 +43,23 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             className="signup-input"
           />
-          <button type="submit" className="session-submit">Log In</button>
+          <button type="submit" className="session-submit">
+            Log In
+          </button>
         </form>
         <form className="guest-form" onSubmit={this.handleGuestLogin}>
-          <input type="submit" value="Guest Login" className="guest-login-btn"/>
-          </form>
+          <input
+            type="submit"
+            value="Guest Login"
+            className="guest-login-btn"
+          />
+        </form>
         <div className="session-footer">
           <Link to="/signup">
-            <p>Don't have an account? Create One</p>
+            <p className="login-redirecter">
+              Don't have an account? Create One
+            </p>
           </Link>
-
         </div>
       </div>
     );
@@ -66,8 +72,8 @@ class LoginForm extends React.Component {
 
   handleGuestLogin(e) {
     e.preventDefault();
-    const guest = { email: "Spongebob@bikinibottom.com", password: "password"}
-    this.props.login(guest).then(() => this.props.history.push('/'));
+    const guest = { email: "Spongebob@bikinibottom.com", password: "password" };
+    this.props.login(guest).then(() => this.props.history.push("/"));
   }
 
   handleChange(e) {

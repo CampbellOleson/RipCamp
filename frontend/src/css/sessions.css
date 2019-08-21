@@ -1,128 +1,139 @@
-
 .main {
-    width: 100%;
-    margin-top: 80px;
-    font-family: 'Roboto', sans-serif;
+  width: 100%;
+  margin-top: 80px;
+  font-family: "Roboto", sans-serif;
 }
 
 .session-form-container {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
-    height: center;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    border: 1px solid lightslategray;
-    box-shadow: 0 5px 15px rgba(94, 82, 82, 0.2);
-    z-index: 1;
-    margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border: 1px solid lightslategray;
+  box-shadow: 0 5px 15px rgba(94, 82, 82, 0.2);
+  z-index: 1;
+  margin-top: 100px;
 }
 
 .session-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: #333333;
-    padding: 5px 15px 15px;
-    width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #333333;
+  padding: 5px 15px 15px;
+  width: 250px;
 }
 
-
 .session-title {
-    font-weight: 550;
-    font-size: 22px;
-    letter-spacing: 2px;
+  font-weight: 550;
+  font-size: 22px;
+  letter-spacing: 2px;
 }
 
 .session-title-small {
-    color: #A1A1A1;
-    font-weight: 300;
-    margin-bottom: 5px;
-    font-size: 15px;
+  color: #a1a1a1;
+  font-weight: 300;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
 
 .session-form p {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
-
 .signup-input {
-    display: border-box;
-    font-size: 14px;
-    font-weight: 650;
-    padding: 20px 13px;
-    border: 1px solid #777777;
-    text-align: left;
-    margin-bottom: 13px;
-    font-size: 14px;
+  display: border-box;
+  font-size: 14px;
+  font-weight: 650;
+  padding: 20px 13px;
+  border: 1px solid #777777;
+  text-align: left;
+  margin-bottom: 13px;
+  font-size: 14px;
 }
 
 .signup-input:focus {
-    outline: 1px solid #40D9AC;
+  outline: 1px solid #40d9ac;
 }
 
 .session-submit {
-    width: 100%;
-    background-color: #40D9AC;
-    color: white;
-    font-size: 20px;
-    border-style: none;
-    display: flex;
-    justify-content: center;
-    display: border-box;
-    padding: 20px 13px;
-    transition: all 0.5s;
+  width: 100%;
+  background-color: #40d9ac;
+  color: white;
+  font-size: 20px;
+  border-style: none;
+  display: flex;
+  justify-content: center;
+  display: border-box;
+  padding: 20px 13px;
+  transition: all 0.5s;
 }
 
-
 .session-submit:hover {
-  color: #40D9AC;
-  border: 2px solid #40D9AC;
+  color: #40d9ac;
+  border: 2px solid #40d9ac;
   background-color: white;
 }
 
 .session-footer a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
-
 @keyframes fadein {
-    from { opacity: 0 };
-    to { opacity: 5};
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 5;
+  }
 }
 
 @-webkit-keyframes fadein {
-    from { opacity: 0 }
-    to { opacity: 5 }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 5;
+  }
 }
 
 .guest-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    color: #333333;
-    padding: 5px 15px 15px;
-    width: 250px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: #333333;
+  padding: 5px 15px 15px;
+  width: 250px;
 }
 
 .guest-login-btn {
-     width: 100%;
-     background-color: #028090;
-     color: white;
-     font-size: 20px;
-     border-style: none;
-     display: flex;
-     justify-content: center;
-     display: border-box;
-     padding: 20px 13px;
-     margin-bottom: 35px;
-     transition: all 0.5s;
+  width: 100%;
+  background-color: #028090;
+  color: white;
+  font-size: 20px;
+  border-style: none;
+  display: flex;
+  justify-content: center;
+  display: border-box;
+  padding: 20px 13px;
+  margin-bottom: 35px;
+  transition: all 0.5s;
 }
 
 .guest-login-btn:hover {
-    color: #028090;
-    border: 2px solid #028090;
-    background-color: white;
+  color: #028090;
+  border: 2px solid #028090;
+  background-color: white;
+}
+
+.login-redirecter {
+  padding-bottom: 25px;
+}
+
+.login-redirecter:hover {
+  color: #028090;
 }
