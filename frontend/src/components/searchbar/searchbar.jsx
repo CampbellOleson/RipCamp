@@ -59,7 +59,9 @@ class SearchBar extends React.Component {
 
             <div className="td" id="city-drop">
               <select name="city" id="city-search">
-                <option value="City" disabled selected>City</option>
+                <option value="City" disabled selected>
+                  City
+                </option>
                 <option value="Los Angeles">Los Angeles</option>
                 <option value="Oahu">Oahu</option>
                 <option value="Bay Area">Bay Area</option>
