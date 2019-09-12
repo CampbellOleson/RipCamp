@@ -1,4 +1,4 @@
-# RipCamp
+# [RipCamp](https://ripcamp.herokuapp.com/#/)
 
 ## Background and overview
 
