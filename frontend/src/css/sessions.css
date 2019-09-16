@@ -7,7 +7,8 @@
 .session-form-container {
   display: flex;
   flex-direction: column;
-  width: 25%;
+  width: 25vw;
+  /* width: 25%; */
   height: center;
   justify-content: center;
   align-items: center;
@@ -15,7 +16,8 @@
   border: 1px solid lightslategray;
   box-shadow: 0 5px 15px rgba(94, 82, 82, 0.2);
   z-index: 1;
-  margin-top: 100px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 
 .session-form {
@@ -24,7 +26,7 @@
   text-align: center;
   color: #333333;
   padding: 5px 15px 15px;
-  width: 250px;
+  width: 20vw;
 }
 
 .session-title {
@@ -107,7 +109,7 @@
   text-align: center;
   color: #333333;
   padding: 5px 15px 15px;
-  width: 250px;
+  width: 20vw;
 }
 
 .guest-login-btn {

@@ -8,17 +8,19 @@ import SurfSpotShowContainer from "../components/surf_spots/surf_spot_show_conta
 
 const App = () => {
   return (
-    <>
+    <div>
       <ProtectedRoute path="/" component={NavbarContainer} />
       <div className="main">
-
         <AuthRoute path="/signup" component={SignupForContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <ProtectedRoute exact path="/" component={SurfSpotsIndexContainer} />
-        <ProtectedRoute exact path="/spots/:spot_id" component={SurfSpotShowContainer} />
-
+        <ProtectedRoute
+          exact
+          path="/spots/:spot_id"
+          component={SurfSpotShowContainer}
+        />
       </div>
-    </>
+    </div>
   );
 };
 

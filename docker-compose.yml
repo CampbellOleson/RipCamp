@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  frontend:
+    build: ./frontend
+    image: darkbeersociety/rip-camp-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+  backend:
+    build: .
+    image: darkbeersociety/rip-camp-backend
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"

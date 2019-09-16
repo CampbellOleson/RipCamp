@@ -10,26 +10,18 @@ class SearchBar extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.suggestionDropdown = this.suggestionDropdown.bind(this);
+    this.updateCity = this.updateCity.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
     if (this.state.search === "") {
       const selectedCity = document.getElementById("city-search").value;
       this.setState({ city: selectedCity });
-      // this.props.spots.filter(spot => spot.city === selectedCity)
       this.props.updateFilter("search", this.state.city);
     } else {
       this.props.updateFilter("search", this.state.search);
     }
-    // .then(this.props.history.push(`/spots?search=${this.state.search}`));
-  }
-
-  componentDidUpdate() {
-    // this.props.updateFilter("search", this.state.search);
-    // this.props.updateFilter("search", this.state.search);
-    // this.setState({ search: "" });
   }
 
   update(field) {
@@ -41,6 +33,12 @@ class SearchBar extends React.Component {
     };
   }
 
+  updateCity(e) {
+    this.setState({
+      city: e.target.value
+    });
+  }
+
   render() {
     return (
       <div className="searchbar-container">
@@ -49,7 +47,7 @@ class SearchBar extends React.Component {
             <div className="td">
               <input
                 type="text"
-                placeholder="Find a surf spot near Los Angeles or Oahu"
+                placeholder="Find your favorite surf spot"
                 onChange={this.update("search")}
                 className="searchbar"
                 value={this.state.search}
@@ -58,7 +56,7 @@ class SearchBar extends React.Component {
             </div>
 
             <div className="td" id="city-drop">
-              <select name="city" id="city-search">
+              <select name="city" id="city-search" onChange={this.updateCity}>
                 <option value="City" disabled selected>
                   City
                 </option>
