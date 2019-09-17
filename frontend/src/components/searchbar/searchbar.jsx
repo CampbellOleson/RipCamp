@@ -33,11 +33,11 @@ class SearchBar extends React.Component {
     };
   }
 
-  updateCity(e) {
-    this.setState({
-      city: e.target.value
-    });
-  }
+  // updateCity(e) {
+  //   this.setState({
+  //     city: e.target.value
+  //   });
+  // }
 
   render() {
     return (
