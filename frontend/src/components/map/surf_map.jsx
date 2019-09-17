@@ -136,12 +136,13 @@ class SurfMap extends React.Component {
 
   updateMapBounds(map) {
     const bounds = map.getBounds();
-    console.log(map);
-    console.log(bounds);
+    // console.log(map);
+    // console.log(bounds);
     const bounds_obj = {
       northEast: { lat: bounds.na.h, lng: bounds.ja.g },
       southWest: { lat: bounds.na.g, lng: bounds.ja.h }
     };
+    debugger;
     this.props.updateFilter("bounds", bounds_obj);
   }
 

@@ -3,11 +3,10 @@ import { Link } from "react-router-dom";
 import QuickShowSlider from "./quickshow_slider";
 
 class QuickShow extends React.Component {
-
-  render() { 
+  render() {
     const spot = this.props.spot;
     return (
-      <Link className="quickshow_container" id={spot._id} to={`/spots/${spot._id}`}>
+      <div className="quickshow_container" id={spot._id}>
         <Link className="quickshow_link" to={`/spots/${spot._id}`}>
           <QuickShowSlider spot={spot} />
           <div className="bottom_half">
@@ -21,7 +20,7 @@ class QuickShow extends React.Component {
             </div>
           </div>
         </Link>
-      </Link>
+      </div>
     );
   }
 }

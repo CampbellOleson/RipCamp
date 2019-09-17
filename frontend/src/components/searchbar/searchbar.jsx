@@ -56,8 +56,13 @@ class SearchBar extends React.Component {
             </div>
 
             <div className="td" id="city-drop">
-              <select name="city" id="city-search" onChange={this.updateCity}>
-                <option value="City" disabled selected>
+              <select
+                name="city"
+                id="city-search"
+                onChange={this.updateCity}
+                defaultValue="City"
+              >
+                <option value="City" disabled>
                   City
                 </option>
                 <option value="Los Angeles">Los Angeles</option>
