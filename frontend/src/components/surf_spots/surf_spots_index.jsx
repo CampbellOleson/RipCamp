@@ -41,7 +41,7 @@ class SurfSpotsIndex extends React.Component {
       ))
     ) : (
       <div className="no-spots-container">
-        <p>No surf spots currently exist in this area</p>
+        <p className="no-spots">No surf spots currently exist in this area</p>
       </div>
     );
   }

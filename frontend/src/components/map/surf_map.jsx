@@ -18,78 +18,78 @@ class SurfMap extends React.Component {
     const lng = spot ? spot.lng : -118.50079;
     const styles = [
       {
-        "featureType": "administrative.neighborhood",
-        "stylers": [
+        featureType: "administrative.neighborhood",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "poi",
-        "elementType": "labels.text",
-        "stylers": [
+        featureType: "poi",
+        elementType: "labels.text",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "poi.business",
-        "stylers": [
+        featureType: "poi.business",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road",
-        "elementType": "labels.icon",
-        "stylers": [
+        featureType: "road",
+        elementType: "labels.icon",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road.highway",
-        "stylers": [
+        featureType: "road.highway",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "transit",
-        "stylers": [
+        featureType: "transit",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "water",
-        "stylers": [
+        featureType: "water",
+        stylers: [
           {
-            "color": "#00c7dd"
+            color: "#00c7dd"
           }
         ]
       },
       {
-        "featureType": "water",
-        "elementType": "labels.text",
-        "stylers": [
+        featureType: "water",
+        elementType: "labels.text",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       }
@@ -136,10 +136,13 @@ class SurfMap extends React.Component {
 
   updateMapBounds(map) {
     const bounds = map.getBounds();
+    // console.log(map);
+    // console.log(bounds);
     const bounds_obj = {
-      northEast: { lat: bounds.na.l, lng: bounds.ga.j },
-      southWest: { lat: bounds.na.j, lng: bounds.ga.l }
+      northEast: { lat: bounds.na.h, lng: bounds.ja.g },
+      southWest: { lat: bounds.na.g, lng: bounds.ja.h }
     };
+    debugger;
     this.props.updateFilter("bounds", bounds_obj);
   }
 

@@ -71,19 +71,22 @@ class MarkerManager {
 
     const handleMouseOut = function(e) {
       infoWindow.close();
-    }
+    };
 
-    var mouseout = marker.addListener("mouseout", handleMouseOut, true)
+    var mouseout = marker.addListener("mouseout", handleMouseOut, true);
 
-    marker.addListener("click", function () {
-      infoWindow.open(this.map, marker);
-      GoogleMapsLoader.load(google => {
-        google.maps.event.removeListener(mouseout);
-      })
-      this.map.panTo(marker.position)
-      this.map.setZoom(15);
-    }, true);
-
+    marker.addListener(
+      "click",
+      function() {
+        infoWindow.open(this.map, marker);
+        GoogleMapsLoader.load(google => {
+          google.maps.event.removeListener(mouseout);
+        });
+        this.map.panTo(marker.position);
+        this.map.setZoom(15);
+      },
+      true
+    );
 
     this.map.addListener("click", function(event) {
       infoWindow.close();
@@ -94,7 +97,7 @@ class MarkerManager {
         if (city === "Bay Area") {
           this.setZoom(8);
         }
-        this.setZoom(10)
+        this.setZoom(10);
       } else {
         this.setZoom(5);
       }
@@ -123,6 +126,18 @@ class MarkerManager {
       sliderButton2.classList.remove("active_marker_buttons");
       quickshow.classList.remove("active_marker");
     }
+
+    function handleQuickshowHover() {
+      infoWindow.open(this.map, marker);
+    }
+
+    function handleQuickshowOut() {
+      infoWindow.close();
+    }
+
+    const quickshow = document.getElementById(marker.id);
+    quickshow.addEventListener("mouseover", handleQuickshowHover);
+    quickshow.addEventListener("mouseout", handleQuickshowOut);
 
     marker.addListener("mouseover", quickshowHighlight);
     marker.addListener("mouseout", quickshowRemove);

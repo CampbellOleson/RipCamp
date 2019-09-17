@@ -42,4 +42,8 @@
   grid-template-columns: 50% 50%;
 }
 
-
+.no-spots-container {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}

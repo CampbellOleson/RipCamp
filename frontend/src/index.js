@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setAuthToken(localStorage.jwtToken);
     const decodedUser = jwt_decode(localStorage.jwtToken);
     const preloadedState = {
-      session: { isAuthenticated: true, user: decodedUser }
+      session: { isSignedIn: true, user: decodedUser }
     };
     store = configureStore(preloadedState);
     const currentTime = Date.now() / 1000;
@@ -29,9 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  
+
   const root = document.getElementById("root");
 
   ReactDOM.render(<Root store={store} />, root);
 });
-
