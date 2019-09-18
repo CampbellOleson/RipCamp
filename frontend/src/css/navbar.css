@@ -48,14 +48,23 @@
 }
 
 .nav-login-btn {
-  margin: 0 25px;
+  /* margin: 0 25px; */
   line-height: 60px;
   font-size: 14px;
-  font-weight: 600;
+  /* font-weight: 600; */
+  border: none;
   height: 100%;
-  width: 100%;
+  /* width: 100%; */
   padding: 0 25px;
-  align-items: center;
+  background-color: white;
+  /* align-items: center; */
+}
+
+.nav-login-btn:focus {
+  outline: none;
+}
+.nav-logout-btn:focus {
+  outline: none;
 }
 
 .nav-login-btn:hover {
@@ -63,15 +72,16 @@
 }
 
 .nav-logout-btn {
-  margin: 0 40px 0 25px;
+  /* margin: 0 40px 0 25px; */
+  margin-left: 10px;
   padding: 0 25px;
-  line-height: 60px;
+  /* line-height: 60px; */
   font-size: 14px;
-  font-weight: 500;
+  /* font-weight: 500; */
   height: 100%;
   background-color: white;
   border-style: none;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .nav-logout-btn:hover {

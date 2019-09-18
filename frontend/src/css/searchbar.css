@@ -3,9 +3,10 @@
   background-color: #48C4DA;
   box-shadow: 0 5px 20px #48C4DA, 0 0 0 15px #ffffffeb;
   border-radius: 20px;
-  transform: scale(0.6);
-  margin: 1em;
+  transform: scaleY(0.7);
+  /* margin: 1em; */
   z-index: 12;
+  width: 100%;
 }
 
 .tb {

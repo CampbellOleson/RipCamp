@@ -18,9 +18,9 @@ class SearchBar extends React.Component {
     if (this.state.search === "") {
       const selectedCity = document.getElementById("city-search").value;
       this.setState({ city: selectedCity });
-      this.props.updateFilter("search", this.state.city);
+      this.props.updateFilter("search", this.state.city).then(() => this.props.history.push("/spots"));
     } else {
-      this.props.updateFilter("search", this.state.search);
+      this.props.updateFilter("search", this.state.search).then(() => this.props.history.push("/spots"));
     }
   }
 
@@ -33,13 +33,15 @@ class SearchBar extends React.Component {
     };
   }
 
-  // updateCity(e) {
-  //   this.setState({
-  //     city: e.target.value
-  //   });
-  // }
+  updateCity(e) {
+    this.setState({
+      city: e.target.value
+    });
+  }
 
   render() {
+
+    // console.log(this.props);
     return (
       <div className="searchbar-container">
         <form onSubmit={this.handleSubmit}>
