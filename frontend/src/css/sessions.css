@@ -81,6 +81,10 @@
   background-color: white;
 }
 
+.session-submit:focus {
+  outline: none;
+}
+
 .session-footer a {
   text-decoration: none;
   color: black;
