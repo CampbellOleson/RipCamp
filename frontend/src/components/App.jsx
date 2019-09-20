@@ -18,8 +18,8 @@ const App = () => {
 
         <Switch>
           <Route exact path="/" component={Splash}/>
-          <AuthRoute exact path="/spots" component={SurfSpotsIndexContainer} />
-          <AuthRoute exact path="/spots/:spot_id" component={SurfSpotShowContainer} />
+          <ProtectedRoute exact path="/spots" component={SurfSpotsIndexContainer} />
+          <ProtectedRoute exact path="/spots/:spot_id" component={SurfSpotShowContainer} />
         </Switch>
       
         <Footer />

@@ -10,9 +10,9 @@ class Navbar extends React.Component {
   }
 
   rightside() {
-    const { currentUser, openModal } = this.props;
+    const { currentUser, openModal, signedIn } = this.props;
 
-    if (currentUser) {
+    if (signedIn) {
       return (
         <div className="right-nav">
           <h4 className="logged-in-user">Welcome, {currentUser.email}</h4>
