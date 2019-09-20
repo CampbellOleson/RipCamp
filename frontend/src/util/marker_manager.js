@@ -94,7 +94,8 @@ class MarkerManager {
       infoWindow.close();
       marker.addListener("mouseout", handleMouseOut);
 
-      const city = document.getElementById("city-search").value;
+      const city = document.getElementsByClassName("city-search")[0].value;
+      console.log(city);
       if (!["City", "Australia", "Florida"].includes(city)) {
         if (city === "Bay Area") {
           this.setZoom(8);

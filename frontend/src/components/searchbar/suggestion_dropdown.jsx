@@ -26,7 +26,7 @@ const SuggestionDropdown = props => {
   return props.suggestions.length > 0 ? (
     <div className={dropdownClass}>
       {props.suggestions.map(suggestion => (
-        <SuggestionIndexItem suggestion={suggestion} />
+        <SuggestionIndexItem suggestion={suggestion} onClick={() => this.props.suggestion = null} />
       ))}
     </div>
   ) : (
