@@ -49,10 +49,12 @@ class MarkerManager {
     const contentString =
       '<div id="content">' +
       `<img id="content-pic" src=${spot.photos[0]}></img>` +
+      '<div id="info-window-content-container">' +
       `<h3 id="firstHeading">${spot.name}</h3>` +
       '<div id="bodyContent">' +
       `<p>${spot.description}</p>` +
       `<p id="difficulty">${spot.difficulty}</p>` +
+      "</div>" +
       "</div>" +
       "</div>";
 

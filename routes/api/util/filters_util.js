@@ -1,13 +1,20 @@
 const SurfSpot = require("../../../models/SurfSpot");
 
 const findByBounds = bounds => {
-  const nwLat = bounds["northEast"].lat;
-  const seLat = bounds["southWest"].lat;
-  const nwLng = bounds["northEast"].lng;
-  const seLng = bounds["southWest"].lng;
+  const neLat = bounds["northEast"].lat;
+  const swLat = bounds["southWest"].lat;
+  const neLng = bounds["northEast"].lng;
+  const swLng = bounds["southWest"].lng;
+
+  // console.log(`swLat: ${swLat}`); // for testing
+  // console.log(`neLat: ${neLat}`);
+  // console.log("--------------------");
+  // console.log(`swLng: ${swLng}`);
+  // console.log(`neLng: ${neLng}`);
+
   return SurfSpot.find({
-    lat: { $gt: seLat, $lt: nwLat },
-    lng: { $gt: nwLng, $lt: seLng }
+    lat: { $gt: swLat, $lt: neLat },
+    lng: { $gt: swLng, $lt: neLng }
   });
 };
 
