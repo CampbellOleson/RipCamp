@@ -2,13 +2,10 @@
   position: absolute;
   top: 85px;
   left: 28px;
-  /* margin-left: 20px; */
   width: 60%;
   max-height: 700px;
   min-height: 50px;
-  /* overflow-y: scroll; */
   overflow: auto;
-  /* background-color: red; */
   border-radius: 2px;
   background-color: white;
   box-shadow: 3px 3px 6px gray;
@@ -19,12 +16,9 @@
   position: absolute;
   top: 54px;
   left: 30px;
-  /* margin-left: 20px; */
   width: 100%;
   max-height: 700px;
   min-height: 50px;
-  /* overflow-y: scroll; */
-  /* background-color: red; */
   border: none;
   border-radius: 2px;
   background-color: white;
@@ -64,7 +58,6 @@
   color: darkslategrey;
   font-weight: 500;
   font-size: 20px;
-  /* margin-top: 32px; */
 }
 
 .thumbnail_photo {
