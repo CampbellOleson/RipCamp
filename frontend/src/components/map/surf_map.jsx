@@ -2,7 +2,7 @@ import React from "react";
 import MarkerManager from "../../util/marker_manager";
 var GoogleMapsLoader = require("google-maps");
 GoogleMapsLoader.KEY = "AIzaSyD0-9GqpxYu6bzDIzbJou9oHpWscNKEUd0";
-console.log(GoogleMapsLoader);
+GoogleMapsLoader.VERSION = "3.38";
 
 var MAP;
 
@@ -81,7 +81,7 @@ class SurfMap extends React.Component {
         featureType: "water",
         stylers: [
           {
-            color: "dodgerblue"
+            color: "#48C4DA"
           }
         ]
       },
@@ -103,7 +103,6 @@ class SurfMap extends React.Component {
     };
     GoogleMapsLoader.load(google => {
       MAP = new google.maps.Map(map, mapOptions);
-      console.log('Google Maps API version: ' + google.maps.version);
       this.MarkerManager = new MarkerManager(MAP);
       this.MarkerManager.updateMarkers(this.props.spots);
       this.listenBounds(MAP);

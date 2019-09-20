@@ -42,7 +42,7 @@
 }
 
 .searchbar {
-  width: 50%;
+  width: 100%;
   line-height: 1;
   border: none;
   color: #555555;
@@ -87,6 +87,9 @@
   color: #48C4DA;
 }
 
+.searchbar-btn:focus {
+  outline: none;
+}
 
 .city-search {
   position: relative;

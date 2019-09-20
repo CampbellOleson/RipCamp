@@ -8,6 +8,7 @@ class SearchBar extends React.Component {
       search: "",
       city: "City",
     };
+    this.baseState = this.state;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.suggestionDropdown = this.suggestionDropdown.bind(this);
     this.updateCity = this.updateCity.bind(this);
@@ -30,9 +31,12 @@ class SearchBar extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value }, () => {
-        const search_obj = { search: this.state.search };
-        this.props.getSearchSuggestions(search_obj);
-      });
+        // console.log(this.state);
+        if (this.state.search !== "") {
+          const search_obj = { search: this.state.search };
+          this.props.getSearchSuggestions(search_obj);
+        };
+      })
     };
   }
 
@@ -61,7 +65,7 @@ class SearchBar extends React.Component {
 
 
     return (
-      <div className={searchClass}>
+      <div className={searchClass} key={Date.now}>
         <form onSubmit={this.handleSubmit} className="search">
           <div className={inputClass}>
             <i className="fas fa-search"></i>
@@ -107,7 +111,11 @@ class SearchBar extends React.Component {
 
   suggestionDropdown() {
     return this.state.search ? (
-      <SuggestionDropdown suggestions={this.props.suggestions} />
+      <SuggestionDropdown
+        suggestions={this.props.suggestions}
+        nullifySearch={this.props.nullifySearch}
+        closeSuggestions={this.props.closeSuggestions}  
+      />
     ) : null;
   }
 }

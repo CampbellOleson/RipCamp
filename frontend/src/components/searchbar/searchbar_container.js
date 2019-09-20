@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
-import { getSearchSuggestions } from "../../actions/surf_spot_actions";
-import { updateFilter } from "../../actions/filter_actions";
+import { getSearchSuggestions, closeSuggestions } from "../../actions/surf_spot_actions";
+import { updateFilter, nullifySearch } from "../../actions/filter_actions";
 import SearchBar from "./searchbar";
 import { withRouter } from 'react-router-dom';
 
@@ -11,7 +11,9 @@ const msp = state => ({
 
 const mdp = dispatch => ({
   getSearchSuggestions: search => dispatch(getSearchSuggestions(search)),
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value))
+  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  nullifySearch: () => dispatch(nullifySearch()),
+  closeSuggestions: () => dispatch(closeSuggestions())
 });
 
 export default withRouter(connect(

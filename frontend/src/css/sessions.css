@@ -137,6 +137,10 @@
   background-color: white;
 }
 
+.guest-login-btn:focus {
+  outline: none;
+}
+
 .login-redirecter {
   padding-bottom: 25px;
 }
