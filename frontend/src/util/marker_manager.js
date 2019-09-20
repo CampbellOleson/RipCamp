@@ -94,15 +94,15 @@ class MarkerManager {
       infoWindow.close();
       marker.addListener("mouseout", handleMouseOut);
 
-      const city = document.getElementById("city-search").value;
-      if (!["City", "Australia", "Florida"].includes(city)) {
-        if (city === "Bay Area") {
-          this.setZoom(8);
-        }
-        this.setZoom(10);
-      } else {
-        this.setZoom(5);
-      }
+      // const city = document.getElementById("city-search").value; // this was null breaking the app
+      // if (!["City", "Australia", "Florida"].includes(city)) {
+      //   if (city === "Bay Area") {
+      //     this.setZoom(8);
+      //   }
+      //   this.setZoom(10);
+      // } else {
+      //   this.setZoom(5);
+      // }
     });
 
     function quickshowHighlight() {
