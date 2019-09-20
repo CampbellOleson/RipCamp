@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import React from "react";
 
 const SuggestionIndexItem = props => (
@@ -15,8 +15,16 @@ const SuggestionIndexItem = props => (
 );
 
 const SuggestionDropdown = props => {
+  let dropdownClass;
+  console.log(props);
+  if (props.location.pathname === "/") {
+    dropdownClass = "suggestion_dropdown"
+  } else {
+    dropdownClass = "navbar-dropdown"
+  }
+
   return props.suggestions.length > 0 ? (
-    <div className="suggestion_dropdown">
+    <div className={dropdownClass}>
       {props.suggestions.map(suggestion => (
         <SuggestionIndexItem suggestion={suggestion} />
       ))}
@@ -24,10 +32,10 @@ const SuggestionDropdown = props => {
   ) : (
     <div className="suggestion_dropdown">
       <p id="no_search_results">
-        Can't find your favorite spot to shred? Post it.
+        Can't find your favorite spot to shred?
       </p>
     </div>
   );
 };
 
-export default SuggestionDropdown;
+export default withRouter(SuggestionDropdown);
