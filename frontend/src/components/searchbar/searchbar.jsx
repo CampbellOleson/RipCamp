@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       search: "",
-      city: "City",
+      city: "City"
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.suggestionDropdown = this.suggestionDropdown.bind(this);
@@ -15,15 +15,20 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const selectedCity = document.getElementsByClassName("city-search")[0] ? document.getElementsByClassName("city-search")[0].value : null;
-    console.log(selectedCity);
-    if ((this.state.search === "" && this.state.city === "City")) {
+    const selectedCity = document.getElementsByClassName("city-search")[0]
+      ? document.getElementsByClassName("city-search")[0].value
+      : null;
+    if (this.state.search === "" && this.state.city === "City") {
       this.props.history.push("/spots");
     } else if (this.state.search === "" && selectedCity) {
-        this.setState({ city: selectedCity });
-        this.props.updateFilter("search", this.state.city).then(() => this.props.history.push("/spots"));
+      this.setState({ city: selectedCity });
+      this.props
+        .updateFilter("search", this.state.city)
+        .then(() => this.props.history.push("/spots"));
     } else {
-      this.props.updateFilter("search", this.state.search).then(() => this.props.history.push("/spots"));
+      this.props
+        .updateFilter("search", this.state.search)
+        .then(() => this.props.history.push("/spots"));
     }
   }
 
@@ -46,19 +51,18 @@ class SearchBar extends React.Component {
     let searchClass, cityClass, searchbarClass, searchbtnClass, inputClass;
 
     if (this.props.location.pathname === "/") {
-      searchClass = "searchbar-container"
-      cityClass = "city-search"
-      searchbarClass = "searchbar"
-      searchbtnClass = 'searchbar-btn';
-      inputClass = "input"
+      searchClass = "searchbar-container";
+      cityClass = "city-search";
+      searchbarClass = "searchbar";
+      searchbtnClass = "searchbar-btn";
+      inputClass = "input";
     } else {
       searchClass = "navbar-searchbar-container";
       cityClass = "navbar-city-search";
       searchbarClass = "navbar-searchbar";
       searchbtnClass = "navbar-searchbar-btn";
-      inputClass = "navbar-input"
+      inputClass = "navbar-input";
     }
-
 
     return (
       <div className={searchClass}>
@@ -73,9 +77,8 @@ class SearchBar extends React.Component {
               value={this.state.search}
               id="search"
             />
-
           </div>
-            
+
           <div className="city-drop-box">
             <select
               name="city"
@@ -83,7 +86,9 @@ class SearchBar extends React.Component {
               onChange={this.updateCity}
               value={this.state.city}
             >
-              <option value="City" disabled>Select a city</option>
+              <option value="City" disabled>
+                Select a city
+              </option>
               <option value="Los Angeles">Los Angeles</option>
               <option value="Oahu">Oahu</option>
               <option value="Bay Area">Bay Area</option>
@@ -94,10 +99,8 @@ class SearchBar extends React.Component {
             </select>
           </div>
 
-          <button
-            type="submit"
-            className={searchbtnClass}
-          >Search
+          <button type="submit" className={searchbtnClass}>
+            Search
           </button>
         </form>
         {this.suggestionDropdown()}
