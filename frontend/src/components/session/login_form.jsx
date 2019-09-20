@@ -24,7 +24,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="session-form">
+        <form onSubmit={this.handleSubmit} 
+          className="session-form">
+          <div onClick={this.props.closeModal} className="close-x">&times;</div>
+
           <h2 className="session-title">Welcome Back!</h2>
           <p className="session-title-small">Just one more wave...</p>
           <input
@@ -55,7 +58,7 @@ class LoginForm extends React.Component {
           />
         </form>
         <div className="session-footer">
-          <Link to="/signup">
+          <Link to="" onClick={this.props.openModal}>
             <p className="login-redirecter">
               Don't have an account? Create One
             </p>
@@ -73,7 +76,7 @@ class LoginForm extends React.Component {
   handleGuestLogin(e) {
     e.preventDefault();
     const guest = { email: "Spongebob@bikinibottom.com", password: "password" };
-    this.props.login(guest).then(() => this.props.history.push("/"));
+    this.props.login(guest).then(() => this.props.closeModal());
   }
 
   handleChange(e) {

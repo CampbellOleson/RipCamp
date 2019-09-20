@@ -14,6 +14,7 @@
   align-items: center;
   margin: auto;
   border: 1px solid lightslategray;
+  background-color: white;
   box-shadow: 0 5px 15px rgba(94, 82, 82, 0.2);
   z-index: 1;
   margin-top: 10vh;
@@ -138,4 +139,10 @@
 
 .login-redirecter:hover {
   color: #028090;
+}
+
+.close-x {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
 }

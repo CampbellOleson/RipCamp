@@ -6,7 +6,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       search: "",
-      city: ""
+      city: "City",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.suggestionDropdown = this.suggestionDropdown.bind(this);
@@ -15,12 +15,15 @@ class SearchBar extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.search === "") {
-      const selectedCity = document.getElementById("city-search").value;
-      this.setState({ city: selectedCity });
-      this.props.updateFilter("search", this.state.city);
+    const selectedCity = document.getElementsByClassName("city-search")[0] ? document.getElementsByClassName("city-search")[0].value : null;
+    console.log(selectedCity);
+    if ((this.state.search === "" && this.state.city === "City")) {
+      this.props.history.push("/spots");
+    } else if (this.state.search === "" && selectedCity) {
+        this.setState({ city: selectedCity });
+        this.props.updateFilter("search", this.state.city).then(() => this.props.history.push("/spots"));
     } else {
-      this.props.updateFilter("search", this.state.search);
+      this.props.updateFilter("search", this.state.search).then(() => this.props.history.push("/spots"));
     }
   }
 
@@ -40,52 +43,62 @@ class SearchBar extends React.Component {
   }
 
   render() {
+    let searchClass, cityClass, searchbarClass, searchbtnClass, inputClass;
+
+    if (this.props.location.pathname === "/") {
+      searchClass = "searchbar-container"
+      cityClass = "city-search"
+      searchbarClass = "searchbar"
+      searchbtnClass = 'searchbar-btn';
+      inputClass = "input"
+    } else {
+      searchClass = "navbar-searchbar-container";
+      cityClass = "navbar-city-search";
+      searchbarClass = "navbar-searchbar";
+      searchbtnClass = "navbar-searchbar-btn";
+      inputClass = "navbar-input"
+    }
+
+
     return (
-      <div className="searchbar-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="tb">
-            <div className="td">
-              <input
-                type="text"
-                placeholder="Find your favorite surf spot"
-                onChange={this.update("search")}
-                className="searchbar"
-                value={this.state.search}
-                id="search"
-              />
-            </div>
+      <div className={searchClass}>
+        <form onSubmit={this.handleSubmit} className="search">
+          <div className={inputClass}>
+            <i className="fas fa-search"></i>
+            <input
+              type="text"
+              placeholder="Find your favorite surf spot"
+              onChange={this.update("search")}
+              className={searchbarClass}
+              value={this.state.search}
+              id="search"
+            />
 
-            <div className="td" id="city-drop">
-              <select
-                name="city"
-                id="city-search"
-                onChange={this.updateCity}
-                defaultValue="City"
-              >
-                <option value="City" disabled>
-                  City
-                </option>
-                <option value="Los Angeles">Los Angeles</option>
-                <option value="Oahu">Oahu</option>
-                <option value="Bay Area">Bay Area</option>
-                <option value="Florida">Florida</option>
-                <option value="Portugal">Portugal</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Australia">Australia</option>
-              </select>
-            </div>
-
-            <div className="td" id="s-cover">
-              <button
-                type="submit"
-                value="Find a spot"
-                className="searchbar-btn"
-              >
-                <div id="s-circle" />
-                <span />
-              </button>
-            </div>
           </div>
+            
+          <div className="city-drop-box">
+            <select
+              name="city"
+              className={cityClass}
+              onChange={this.updateCity}
+              value={this.state.city}
+            >
+              <option value="City" disabled>Select a city</option>
+              <option value="Los Angeles">Los Angeles</option>
+              <option value="Oahu">Oahu</option>
+              <option value="Bay Area">Bay Area</option>
+              <option value="Florida">Florida</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Australia">Australia</option>
+            </select>
+          </div>
+
+          <button
+            type="submit"
+            className={searchbtnClass}
+          >Search
+          </button>
         </form>
         {this.suggestionDropdown()}
       </div>
