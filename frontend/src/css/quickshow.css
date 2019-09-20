@@ -1,7 +1,9 @@
 .quickshow_container {
   width: 90%;
   height: 300px;
-  box-shadow: 2px 2px 4px gray;
+  -webkit-box-shadow: 0px 2px 5px -1px rgba(128, 128, 128, 1);
+  -moz-box-shadow: 0px 2px 5px -1px rgba(128, 128, 128, 1);
+  box-shadow: 0px 2px 5px -1px rgba(128, 128, 128, 1);
   margin-bottom: 30px;
   border-radius: 5px;
   background-color: white;
@@ -9,7 +11,8 @@
 }
 
 .quickshow_container:hover {
-  background-color: #48c4da;
+  /* background-color: #f0f8ff; */
+  background-color: #afeeee;
 }
 
 .quickshow_photobar {
@@ -107,5 +110,6 @@
 }
 
 .active_marker {
-  background-color: #48c4da;
+  /* background-color: #48c4da; */
+  background-color: #afeeee;
 }
