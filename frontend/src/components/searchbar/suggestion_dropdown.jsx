@@ -1,6 +1,7 @@
 import { Link, withRouter } from "react-router-dom";
 import React from "react";
 
+
 const SuggestionIndexItem = props => {
   // let item = 
   return (
@@ -24,7 +25,7 @@ const SuggestionIndexItem = props => {
 
 const SuggestionDropdown = props => {
   let dropdownClass;
-  // console.log(props);
+
   if (props.location.pathname === "/") {
     dropdownClass = "suggestion_dropdown";
   } else {
@@ -36,10 +37,12 @@ const SuggestionDropdown = props => {
     // console.log("before: "+ search.value);
     search.value = ""
     // console.log("after: "+ search.value);
+
   }
 
   return props.suggestions.length > 0 ? (
     <div className={dropdownClass}>
+
       {props.suggestions.map((suggestion,i) => (
         <SuggestionIndexItem suggestion={suggestion} resetSearch={resetsearch} closeSuggestions={props.closeSuggestions} key={i}/>
       ))}
@@ -49,6 +52,15 @@ const SuggestionDropdown = props => {
       <p className="no-search-results">
         Can't find your favorite spot to shred?
       </p>
+
+      {props.suggestions.map((suggestion, idx) => (
+        <SuggestionIndexItem suggestion={suggestion} key={idx} />
+      ))}
+    </div>
+  ) : (
+    <div className="suggestion_dropdown">
+      <p id="no_search_results">Can't find your favorite spot to shred?</p>
+
     </div>
   );
 };
