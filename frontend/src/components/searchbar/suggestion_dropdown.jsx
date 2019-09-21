@@ -31,9 +31,7 @@ const SuggestionDropdown = props => {
 
   const resetsearch = () => {
     let search = document.getElementById("search");
-    // console.log("before: "+ search.value);
     search.value = "";
-    // console.log("after: "+ search.value);
   };
 
   return props.suggestions.length > 0 ? (
