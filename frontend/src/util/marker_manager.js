@@ -94,6 +94,7 @@ class MarkerManager {
       infoWindow.close();
       marker.addListener("mouseout", handleMouseOut);
 
+<<<<<<< HEAD
       const city = document.getElementsByClassName("city-search")[0] ? document.getElementsByClassName("city-search")[0].value : null;
       console.log(city);
       if (city !== null) {
@@ -106,6 +107,17 @@ class MarkerManager {
           this.setZoom(5);
         }
       }
+=======
+      // const city = document.getElementById("city-search").value; // this was null breaking the app
+      // if (!["City", "Australia", "Florida"].includes(city)) {
+      //   if (city === "Bay Area") {
+      //     this.setZoom(8);
+      //   }
+      //   this.setZoom(10);
+      // } else {
+      //   this.setZoom(5);
+      // }
+>>>>>>> 29d2d1729a19a266bbc65eed70b18f270138f8de
     });
 
     function quickshowHighlight() {

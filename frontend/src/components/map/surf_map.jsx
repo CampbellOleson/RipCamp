@@ -110,7 +110,13 @@ class SurfMap extends React.Component {
   }
 
   componentDidUpdate(oldProps) {
-    if (this.MarkerManager) {
+    const oldId = oldProps.spots[0] ? oldProps.spots[0]._id : 0;
+    const currentId = this.props.spots[0] ? this.props.spots[0]._id : 1;
+    if (
+      this.MarkerManager &&
+      oldProps.spots.length != this.props.spots.length &&
+      oldId != currentId
+    ) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
     if (
