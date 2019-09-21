@@ -5,11 +5,7 @@ const SuggestionIndexItem = props => {
   // let item =
   return (
     <div className="suggestion_index_item">
-      <Link
-        className="suggestion_link"
-        to={`spots/${props.suggestion._id}`}
-        // onClick={() => props.closeSuggestions()}
-      >
+      <Link className="suggestion_link" to={`spots/${props.suggestion._id}`}>
         <div className="suggestion_content_container">
           <i className="fas fa-map-marker-alt"></i>
           <p className="suggestion_name">{props.suggestion.name}</p>
