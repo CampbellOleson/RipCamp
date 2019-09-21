@@ -5,7 +5,7 @@ export const RECEIVE_SURF_SPOT_ERRORS = "RECEIVE_SURF_SPOT_ERRORS";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEWS";
 //export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 export const RECEIVE_SEARCH_SUGGESTIONS = "RECEIVE_SEARCH_SUGGESTIONS";
-
+export const CLOSE_SUGGESTIONS = 'CLOSE_SUGGESTIONS'
 
 const receiveSurfSpots = spots => ({
   type: RECEIVE_SURF_SPOTS,
@@ -32,6 +32,10 @@ const receiveSearchSuggestions = suggestions => ({
   type: RECEIVE_SEARCH_SUGGESTIONS,
   suggestions
 });
+
+export const closeSuggestions = () => ({
+  type: CLOSE_SUGGESTIONS
+})
 
 
 export const getSurfSpots = filter => dispatch =>

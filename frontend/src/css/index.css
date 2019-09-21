@@ -43,11 +43,15 @@
 }
 
 .no-spots-container {
-  margin-top: 40%;
+  /* margin-top: 40%; */
+  width: 100%;
   font-size: 30px;
   color: #48c4da;
-  position: absolute;
-  left: 8%;
-  bottom: 30%;
+  /* position: absolute; */
+  /* left: 8%; */
+  /* bottom: 30%; */
   text-shadow: 1px 1px 1px #48c4da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -16,6 +16,7 @@ class SurfSpotShow extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.spot_id;
+    this.props.closeSuggestions();
     this.props.getSingleSurfSpot(id);
   }
 

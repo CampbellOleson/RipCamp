@@ -103,6 +103,7 @@ class MarkerManager {
       // } else {
       //   this.setZoom(5);
       // }
+
     });
 
     function quickshowHighlight() {

@@ -67,12 +67,15 @@
   border-radius: 2px;
 }
 
-#no_search_results {
-  margin-left: 20px;
+.no-search-results {
   font-weight: 400;
   color: darkslategrey;
-  margin-top: 10px;
+  margin: 15px 10px;
+  font-size: 20px;
 }
+
+
+
 
 .fa-map-marker-alt {
   color: dodgerblue;
