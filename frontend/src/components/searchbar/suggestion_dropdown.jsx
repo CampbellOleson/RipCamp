@@ -2,7 +2,6 @@ import { Link, withRouter } from "react-router-dom";
 import React from "react";
 
 const SuggestionIndexItem = props => {
-  // let item =
   return (
     <div className="suggestion_index_item">
       <Link className="suggestion_link" to={`spots/${props.suggestion._id}`}>
