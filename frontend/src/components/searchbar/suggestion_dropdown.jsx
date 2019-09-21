@@ -1,9 +1,8 @@
 import { Link, withRouter } from "react-router-dom";
 import React from "react";
 
-
 const SuggestionIndexItem = props => {
-  // let item = 
+  // let item =
   return (
     <div className="suggestion_index_item">
       <Link
@@ -15,12 +14,15 @@ const SuggestionIndexItem = props => {
           <i className="fas fa-map-marker-alt"></i>
           <p className="suggestion_name">{props.suggestion.name}</p>
           <p className="suggestion_city">{props.suggestion.city}</p>
-          <img src={props.suggestion.photos[0]} className="thumbnail_photo" alt=""/>
+          <img
+            src={props.suggestion.photos[0]}
+            className="thumbnail_photo"
+            alt=""
+          />
         </div>
       </Link>
     </div>
-    
-  )
+  );
 };
 
 const SuggestionDropdown = props => {
@@ -35,16 +37,19 @@ const SuggestionDropdown = props => {
   const resetsearch = () => {
     let search = document.getElementById("search");
     // console.log("before: "+ search.value);
-    search.value = ""
+    search.value = "";
     // console.log("after: "+ search.value);
-
-  }
+  };
 
   return props.suggestions.length > 0 ? (
     <div className={dropdownClass}>
-
-      {props.suggestions.map((suggestion,i) => (
-        <SuggestionIndexItem suggestion={suggestion} resetSearch={resetsearch} closeSuggestions={props.closeSuggestions} key={i}/>
+      {props.suggestions.map((suggestion, i) => (
+        <SuggestionIndexItem
+          suggestion={suggestion}
+          resetSearch={resetsearch}
+          closeSuggestions={props.closeSuggestions}
+          key={i}
+        />
       ))}
     </div>
   ) : (
@@ -52,15 +57,6 @@ const SuggestionDropdown = props => {
       <p className="no-search-results">
         Can't find your favorite spot to shred?
       </p>
-
-      {props.suggestions.map((suggestion, idx) => (
-        <SuggestionIndexItem suggestion={suggestion} key={idx} />
-      ))}
-    </div>
-  ) : (
-    <div className="suggestion_dropdown">
-      <p id="no_search_results">Can't find your favorite spot to shred?</p>
-
     </div>
   );
 };
