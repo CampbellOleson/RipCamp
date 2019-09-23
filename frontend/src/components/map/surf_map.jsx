@@ -2,6 +2,7 @@ import React from "react";
 import MarkerManager from "../../util/marker_manager";
 var GoogleMapsLoader = require("google-maps");
 GoogleMapsLoader.KEY = "AIzaSyD0-9GqpxYu6bzDIzbJou9oHpWscNKEUd0";
+GoogleMapsLoader.VERSION = "3.38";
 
 var MAP;
 
@@ -18,85 +19,86 @@ class SurfMap extends React.Component {
     const lng = spot ? spot.lng : -118.50079;
     const styles = [
       {
-        "featureType": "administrative.neighborhood",
-        "stylers": [
+        featureType: "administrative.neighborhood",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "poi",
-        "elementType": "labels.text",
-        "stylers": [
+        featureType: "poi",
+        elementType: "labels.text",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "poi.business",
-        "stylers": [
+        featureType: "poi.business",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
+        featureType: "road",
+        elementType: "labels",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road",
-        "elementType": "labels.icon",
-        "stylers": [
+        featureType: "road",
+        elementType: "labels.icon",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "road.highway",
-        "stylers": [
+        featureType: "road.highway",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "transit",
-        "stylers": [
+        featureType: "transit",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       },
       {
-        "featureType": "water",
-        "stylers": [
+        featureType: "water",
+        stylers: [
           {
-            "color": "#00c7dd"
+            color: "#48C4DA"
           }
         ]
       },
       {
-        "featureType": "water",
-        "elementType": "labels.text",
-        "stylers": [
+        featureType: "water",
+        elementType: "labels.text",
+        stylers: [
           {
-            "visibility": "off"
+            visibility: "off"
           }
         ]
       }
     ];
     const mapOptions = {
       center: { lat: lat, lng: lng },
-      zoom: 4,
+      zoom: 5,
+      minZoom: 5,
       styles: styles
     };
     GoogleMapsLoader.load(google => {
@@ -108,7 +110,13 @@ class SurfMap extends React.Component {
   }
 
   componentDidUpdate(oldProps) {
-    if (this.MarkerManager) {
+    const oldId = oldProps.spots[0] ? oldProps.spots[0]._id : 0;
+    const currentId = this.props.spots[0] ? this.props.spots[0]._id : 1;
+    if (
+      this.MarkerManager &&
+      oldProps.spots.length !== this.props.spots.length &&
+      oldId !== currentId
+    ) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
     if (
@@ -136,10 +144,13 @@ class SurfMap extends React.Component {
 
   updateMapBounds(map) {
     const bounds = map.getBounds();
-    // debugger;
+
+    const northEast = bounds.getNorthEast();
+    const southWest = bounds.getSouthWest();
     const bounds_obj = {
-      northEast: { lat: bounds.oa.h, lng: bounds.ka.g },
-      southWest: { lat: bounds.oa.g, lng: bounds.ka.h }
+      northEast: { lat: northEast.lat(), lng: northEast.lng() },
+      southWest: { lat: southWest.lat(), lng: southWest.lng() }
+
     };
     this.props.updateFilter("bounds", bounds_obj);
   }

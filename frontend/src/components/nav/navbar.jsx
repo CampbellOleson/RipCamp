@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import '../../css/navbar.css';
+import SearchBar from '../searchbar/searchbar_container';
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -10,9 +10,9 @@ class Navbar extends React.Component {
   }
 
   rightside() {
-    const { currentUser } = this.props;
+    const { currentUser, openModal, signedIn } = this.props;
 
-    if (currentUser) {
+    if (signedIn) {
       return (
         <div className="right-nav">
           <h4 className="logged-in-user">Welcome, {currentUser.email}</h4>
@@ -24,28 +24,31 @@ class Navbar extends React.Component {
     } else {
       return (
         <div className="right-nav">
-          <Link to={"/login"} className="nav-login-btn">Sign In</Link>
-          <Link to={"/signup"} className="nav-login-btn">Sign Up</Link>
+          <button onClick={() => openModal('login')} className="nav-login-btn">Log In</button>
+          <button onClick={() => openModal('signup')}  className="nav-login-btn">Sign Up</button>
         </div>
       )
     }
   }
 
   render() { 
+    let searchbar;
+    if (this.props.location.pathname !== "/") {
+      searchbar = <SearchBar />
+    }
     return (
-      <div>
-        <nav className="navbar">
-          <div className="left-nav">
-            <Link to="/" className="logo">
-              <h1>RIPCAMP<i className="fas fa-tint fa-sm"></i></h1>
-              
-            </Link>
-          </div>
-          {/* <button onClick={this.handleLogOut}>Log Out</button> */}
 
-          {this.rightside()}
-        </nav>
-      </div>
+      <nav className="navbar">
+        <div className="left-nav">
+          <Link to="/" className="logo">
+            <h1>RIPCAMP</h1>
+          </Link>
+          {searchbar}
+        </div>
+        {/* <button onClick={this.handleLogOut}>Log Out</button> */}
+
+        {this.rightside()}
+      </nav>
     );
   }
 

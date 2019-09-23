@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import SurfSpotShow from "./surf_spot_show";
-import { getSingleSurfSpot } from "../../actions/surf_spot_actions";
+import { getSingleSurfSpot, closeSuggestions } from "../../actions/surf_spot_actions";
 
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.spot_id;
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  getSingleSurfSpot: id => dispatch(getSingleSurfSpot(id))
+  getSingleSurfSpot: id => dispatch(getSingleSurfSpot(id)),
+  closeSuggestions: () => dispatch(closeSuggestions())
 });
 
 export default connect(

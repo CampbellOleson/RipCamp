@@ -116,7 +116,7 @@ lng = [
   114.966521, // club dolphin
   -71.176685, // davy jones locker
   -80.107409, // bootstrap bill
-  -158.085638, // chuns reef
+  -158.085638, // chuns reef // query range  -134.92145349476885, 175.73894689585615
   -158.104160, // haleiwa
   -9.069669, // nazare
   -158.052918 // banzai pipeline

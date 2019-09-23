@@ -15,13 +15,12 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.currentUser === true) {
-      this.props.history.push('/tweets');
+      this.props.history.push("/tweets");
     }
 
-    this.setState({ errors: nextProps.errors })
-
+    this.setState({ errors: nextProps.errors });
   }
 
   renderErrors(){
@@ -47,7 +46,10 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
-        <form onSubmit={this.handleSubmit} className="session-form">
+        <form onSubmit={this.handleSubmit} 
+          className="session-form">
+          <div onClick={this.props.closeModal} className="close-x">&times;</div>
+
           <h2 className="session-title">Welcome Back!</h2>
           <p className="session-title-small">Just one more wave...</p>
           
@@ -67,17 +69,26 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             className="signup-input"
           />
+
           {this.renderErrors()}
-          <button type="submit" className="session-submit">Log In</button>
+          <button type="submit" className="session-submit">
+            Log In
+          </button>
+
         </form>
         <form className="guest-form" onSubmit={this.handleGuestLogin}>
-          <input type="submit" value="Guest Login" className="guest-login-btn"/>
-          </form>
+          <input
+            type="submit"
+            value="Guest Login"
+            className="guest-login-btn"
+          />
+        </form>
         <div className="session-footer">
-          <Link to="/signup">
-            <p>Don't have an account? Create One</p>
+          <Link to="" onClick={this.props.openModal}>
+            <p className="login-redirecter">
+              Don't have an account? Create One
+            </p>
           </Link>
-
         </div>
       </div>
     );
@@ -85,13 +96,13 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state).then(() => this.props.closeModal());
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
-    const guest = { email: "Spongebob@bikinibottom.com", password: "password"}
-    this.props.login(guest).then(() => this.props.history.push('/'));
+    const guest = { email: "Spongebob@bikinibottom.com", password: "password" };
+    this.props.login(guest).then(() => this.props.closeModal());
   }
 
   handleChange(e) {

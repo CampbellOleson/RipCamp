@@ -22,7 +22,7 @@ class Weather extends React.Component {
 
     request(url, (err, response, body) => {
       if (err) {
-        console.log("error:", err);
+        // console.log("error:", err);
       } else {
         let weather = JSON.parse(body);
         this.setState(state => {
@@ -48,7 +48,7 @@ class Weather extends React.Component {
 
     const icon = this.state.conditions ? (
       this.state.conditions.includes("cloud") ? (
-        <i class="fas fa-cloud fa-5x" />
+        <i className="fas fa-cloud fa-5x" />
       ) : (
         <i className="fas fa-sun fa-5x" />
       )

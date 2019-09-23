@@ -14,13 +14,15 @@ class SignupForm extends React.Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push('/login');
-    }
+  // UNSAFE_componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push("/login");
+  //   }
 
-    this.setState({ errors: nextProps.errors })
-  }
+  //   this.setState({ errors: nextProps.errors });
+  // }
+
+
   renderErrors() {
     if (this.props.errors instanceof Array || this.props.errors === null) {
       return [];
@@ -41,52 +43,60 @@ class SignupForm extends React.Component {
     }
   }
   
+
   render() {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form">
-            <h2 className="session-title">Join Ripcamp!</h2>
-            <p className="session-title-small">Discover the best surf spots!</p>
+          <div onClick={this.props.closeModal} className="close-x">&times;</div>
 
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              className="signup-input"
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              className="signup-input"
-            />
-            <input
-              type="password"
-              name="password2"
-              placeholder="Confirm password"
-              value={this.state.password2}
-              onChange={this.handleChange}
-              className="signup-input"
-            />
-          {this.renderErrors()}
-          <button type="submit" className="session-submit">Join Ripcamp</button>
+          <h2 className="session-title">Join Ripcamp!</h2>
+          <p className="session-title-small">Discover the best surf spots!</p>
+
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            value={this.state.email}
+            onChange={this.handleChange}
+            className="signup-input"
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={this.state.password}
+            onChange={this.handleChange}
+            className="signup-input"
+          />
+          <input
+            type="password"
+            name="password2"
+            placeholder="Confirm password"
+            value={this.state.password2}
+            onChange={this.handleChange}
+            className="signup-input"
+          />
+            {this.renderErrors()}
+          <button type="submit" className="session-submit">
+            Join Ripcamp
+          </button>
+
         </form>
 
         <form className="guest-form" onSubmit={this.handleGuestLogin}>
-          <input type="submit" value="Guest Login" className="guest-login-btn" />
+          <input
+            type="submit"
+            value="Guest Login"
+            className="guest-login-btn"
+          />
         </form>
 
-        
-
         <div className="session-footer">
-          <Link to="/login">
-            <p>Already a user? Login</p>
+          <Link to="" onClick={this.props.openModal}>
+            <p className="login-redirecter">Already a user? Login</p>
           </Link>
-
         </div>
       </div>
     );
@@ -94,13 +104,13 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signup(this.state);
+    this.props.signup(this.state).then(() => this.props.closeModal());
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
-    const guest = { email: "Spongebob@bikinibottom.com", password: "password" }
-    this.props.login(guest).then(() => this.props.history.push('/'));
+    const guest = { email: "Spongebob@bikinibottom.com", password: "password" };
+    this.props.login(guest).then(() => this.props.closeModal());
   }
 
   handleChange(e) {

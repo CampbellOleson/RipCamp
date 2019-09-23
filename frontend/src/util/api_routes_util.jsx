@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import React from "react";
 
 const mapStateToProps = state => ({
-  loggedIn: state.session.isSignedIn || Boolean(state.session.user)
-});
+  loggedIn: state.session.isSignedIn
+}); 
 
 const Protected = ({ loggedIn, path, exact, component: Component }) => {
   return (
@@ -12,7 +12,7 @@ const Protected = ({ loggedIn, path, exact, component: Component }) => {
       path={path}
       exact={exact}
       render={props =>
-        !loggedIn ? <Redirect to="/signup" /> : <Component {...props} />
+        !loggedIn ? <Redirect to="/" /> : <Component {...props} />
       }
     />
   );

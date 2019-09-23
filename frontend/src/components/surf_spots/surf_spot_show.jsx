@@ -17,8 +17,17 @@ class SurfSpotShow extends React.Component {
 
   componentDidMount() {
     const id = this.props.match.params.spot_id;
+    // this.props.closeSuggestions();
     this.props.getSingleSurfSpot(id);
   }
+
+  componentDidUpdate(prevProps) {
+    const id = this.props.match.params.spot_id;
+    if (prevProps.spot && prevProps.spot._id != id) {
+      this.props.getSingleSurfSpot(id);
+    }
+  }
+
   forwardPhoto(e) {
     e.preventDefault();
     const length = this.props.spot.photos.length;
@@ -71,7 +80,9 @@ class SurfSpotShow extends React.Component {
         <div className="content-inner">
           <div className="show-content-wrapper">
             <div className="show-location">
-              <Link to="" className="city-link">{spot.city}</Link>
+              <Link to="" className="city-link">
+                {spot.city}
+              </Link>
               <p>{">"}</p>
               <p>{spot.name}</p>
             </div>
@@ -95,9 +106,9 @@ class SurfSpotShow extends React.Component {
               </a>
             </div>
           </div>
-          
+
           <div className="weather-wrapper">
-              <Weather spot={spot}/>
+            <Weather spot={spot} />
           </div>
         </div>
       </div>
