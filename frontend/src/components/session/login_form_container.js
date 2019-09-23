@@ -3,8 +3,10 @@ import LoginForm from "./login_form";
 import { login } from "../../actions/session_actions";
 
 const mapStateToProps = state => {
+  const errors = state.errors.session;
+  state.errors.session = null;
   return {
-    errors: state.errors.session
+    errors: errors
   };
 };
 

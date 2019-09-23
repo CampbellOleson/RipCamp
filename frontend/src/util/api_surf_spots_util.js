@@ -9,8 +9,12 @@ export const fetchSingleSurfSpot = spotId => {
   return axios.get(`/api/spots/${spotId}`);
 };
 
-export const createReview = review => {
-  return axios.post(`/api/reviews`, review);
+export const createReview = (data, spotId)=> {
+  return axios.post(`/spots/${spotId}/reviews`, data);
+};
+
+export const getReviews = (spotId) => {
+  return axios.get(`/spots/${spotId}/reviews`);
 };
 
 export const searchSpots = search => {

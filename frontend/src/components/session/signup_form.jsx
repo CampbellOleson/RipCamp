@@ -21,6 +21,25 @@ class SignupForm extends React.Component {
 
     this.setState({ errors: nextProps.errors })
   }
+  renderErrors() {
+    if (this.props.errors instanceof Array || this.props.errors === null) {
+      return [];
+
+    } else {
+      const values = Object.values(this.props.errors);
+      
+      return (
+        <div className="errors">
+          {values.map((error, i) => (
+            <div key={`error-${i}`}>
+              {error}
+            </div>
+
+          ))}
+        </div>
+      );
+    }
+  }
   
   render() {
     return (
@@ -53,7 +72,7 @@ class SignupForm extends React.Component {
               onChange={this.handleChange}
               className="signup-input"
             />
-
+          {this.renderErrors()}
           <button type="submit" className="session-submit">Join Ripcamp</button>
         </form>
 

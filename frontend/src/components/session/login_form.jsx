@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { timingSafeEqual } from "crypto";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class LoginForm extends React.Component {
       email: "",
       password: ""
     };
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,12 +24,33 @@ class LoginForm extends React.Component {
 
   }
 
+  renderErrors(){
+    if (this.props.errors instanceof Array || this.props.errors === null){
+      return [];
+    
+    }else{
+      const values = Object.values(this.props.errors);
+      
+      return (
+        <div className="errors">
+          {values.map((error, i) => (
+            <div key={`error-${i}`}>
+              {error}
+            </div>
+            
+          ))}
+        </div>
+        );
+    }
+  }
+
   render() {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form">
           <h2 className="session-title">Welcome Back!</h2>
           <p className="session-title-small">Just one more wave...</p>
+          
           <input
             type="email"
             name="email"
@@ -44,6 +67,7 @@ class LoginForm extends React.Component {
             onChange={this.handleChange}
             className="signup-input"
           />
+          {this.renderErrors()}
           <button type="submit" className="session-submit">Log In</button>
         </form>
         <form className="guest-form" onSubmit={this.handleGuestLogin}>

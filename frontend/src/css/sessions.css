@@ -28,6 +28,14 @@
     width: 250px;
 }
 
+.errors{
+    color: red;
+}
+
+.errors div{
+    padding-bottom: 10px;
+}
+
 
 .session-title {
     font-weight: 550;

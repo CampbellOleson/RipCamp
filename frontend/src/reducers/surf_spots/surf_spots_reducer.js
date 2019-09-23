@@ -2,7 +2,6 @@ import {
   RECEIVE_SINGLE_SURF_SPOT,
   RECEIVE_SURF_SPOTS,
   RECEIVE_SURF_SPOT_ERRORS,
-  RECEIVE_REVIEW
 } from "../../actions/surf_spot_actions";
 import { merge } from "lodash";
 
@@ -15,8 +14,6 @@ const surfSpotsReducer = (state = {}, action) => {
       return merge({}, state, { [action.spot._id]: action.spot });
     case RECEIVE_SURF_SPOT_ERRORS:
       return {};
-    case RECEIVE_REVIEW:
-      return merge({}, state, { [action.spot._id]: action.review });
     default:
       return state;
   }
