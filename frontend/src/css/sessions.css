@@ -30,6 +30,17 @@
   width: 20vw;
 }
 
+
+.errors{
+    color: red;
+}
+
+.errors div{
+    padding-bottom: 10px;
+}
+
+
+
 .session-title {
   font-weight: 550;
   font-size: 22px;

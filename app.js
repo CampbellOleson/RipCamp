@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const surfSpots = require("./routes/api/surf_spots");
+const reviews = require("./routes/api/reviews");
 // const seeds = require("./seeds");
 // const SurfSpot = require("./models/SurfSpot");
 
@@ -33,6 +34,7 @@ require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use("/api", surfSpots);
+app.use("/api", reviews);
 
 const port = process.env.PORT || 5000;
 

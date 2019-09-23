@@ -5,9 +5,11 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = state => {
+  const errors = state.errors.session;
+  state.errors.session = null;
   return {
     signedIn: state.session.isSignedIn,
-    errors: state.errors.session
+    errors: errors
   };
 };
 

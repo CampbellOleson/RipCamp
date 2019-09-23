@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Weather from "../weather/weather";
+import Reviews from  "./reviews_index_container";
 
 class SurfSpotShow extends React.Component {
   constructor(props) {
@@ -100,7 +101,8 @@ class SurfSpotShow extends React.Component {
             <br />
             <div className="reviews-container">
               <a href="#reviews" className="reviews-link">
-                This is where the reviews will go
+                
+                <Reviews />
               </a>
             </div>
           </div>

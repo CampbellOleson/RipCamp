@@ -5,8 +5,10 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = state => {
+  const errors = state.errors.session;
+  state.errors.session = null;
   return {
-    errors: state.errors.session
+    errors: errors
   };
 };
 
