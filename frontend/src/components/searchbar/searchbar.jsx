@@ -36,7 +36,6 @@ class SearchBar extends React.Component {
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value }, () => {
-        // console.log(this.state);
         if (this.state.search !== "") {
           const search_obj = { search: this.state.search };
           this.props.getSearchSuggestions(search_obj);
@@ -117,7 +116,6 @@ class SearchBar extends React.Component {
       <SuggestionDropdown
         suggestions={this.props.suggestions}
         nullifySearch={this.props.nullifySearch}
-        closeSuggestions={this.props.closeSuggestions}  
       />
     ) : null;
   }
