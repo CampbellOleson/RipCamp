@@ -1,3 +1,3 @@
-# [RipCamp](https://ripcamp.herokuapp.com/#/)
+# [RipCamp](https://ripcamp.herokuapp.com/)
 
 RipCamp
