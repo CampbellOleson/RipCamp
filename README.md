@@ -2,7 +2,7 @@
 
 RipCamp is the go-to website for finding all of the best surf. Users can navigate the globe using RipCamp's map-based interface to find the locations of surf spots anywhere. RipCamp also has information on individual surf spots, including a description, difficulty level, and local weather conditions. 
 
-RipCamp is built with ExpressJS, MongoDB, and React/Redux on the frontend. It also encorperates Google Maps API for the map interface, and Open Weather API for weather conditions. 
+RipCamp is built with **ExpressJS, MongoDB, and React/Redux on the frontend.** It also encorperates **Google Maps API** for the map interface, and **Open Weather API** for weather conditions. 
 
 ![Splash Page](./screenshots/splash.png)
 
