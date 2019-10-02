@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  frontend:
+  web:
     build: ./frontend
     image: darkbeersociety/rip-camp-frontend
     ports:
@@ -19,3 +19,5 @@ services:
     image: mongo
     ports:
       - "27017:27017"
+# backend is not necissary because connecting to remote mongodb
+# the whole project is shipped in 'web'
