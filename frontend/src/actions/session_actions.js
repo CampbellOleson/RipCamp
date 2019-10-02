@@ -36,15 +36,19 @@ export const logoutUser = () => ({
 export const signup = user => dispatch => {
   return APIUtil.signup(user)
     .then(
-      () => dispatch(receiveUserSignIn()),
-      err => dispatch(receiveErrors(err.response.data))
+      res => {
+        dispatch(receiveUserSignIn());
+        dispatch(receiveCurrentUser(res.data));
+      },
+      err => {
+        dispatch(receiveErrors(err.response.data));
+      }
     )
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err.message));
     });
 };
 
-// Upon login, set the session token and dispatch the current user. Dispatch errors on failure.
 export const login = user => dispatch =>
   APIUtil.login(user)
     .then(res => {
@@ -55,10 +59,9 @@ export const login = user => dispatch =>
       dispatch(receiveCurrentUser(decoded));
     })
     .catch(err => {
-      dispatch(receiveErrors(err.response.data));
+      dispatch(receiveErrors(err.message));
     });
 
-// We wrote this one earlier
 export const logout = () => dispatch => {
   localStorage.removeItem("jwtToken");
   APIUtil.setAuthToken(false);

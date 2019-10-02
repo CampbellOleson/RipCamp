@@ -22,37 +22,32 @@ class SignupForm extends React.Component {
   //   this.setState({ errors: nextProps.errors });
   // }
 
-
   renderErrors() {
     if (this.props.errors instanceof Array || this.props.errors === null) {
       return [];
-
     } else {
       const values = Object.values(this.props.errors);
-      
+
       return (
         <div className="errors">
           {values.map((error, i) => (
-            <div key={`error-${i}`}>
-              {error}
-            </div>
-
+            <div key={`error-${i}`}>{error}</div>
           ))}
         </div>
       );
     }
   }
-  
 
   render() {
     return (
       <div className="session-form-container">
         <form onSubmit={this.handleSubmit} className="session-form">
-          <div onClick={this.props.closeModal} className="close-x">&times;</div>
+          <div onClick={this.props.closeModal} className="close-x">
+            &times;
+          </div>
 
           <h2 className="session-title">Join Ripcamp!</h2>
           <p className="session-title-small">Discover the best surf spots!</p>
-
 
           <input
             type="email"
@@ -78,11 +73,10 @@ class SignupForm extends React.Component {
             onChange={this.handleChange}
             className="signup-input"
           />
-            {this.renderErrors()}
+          {this.renderErrors()}
           <button type="submit" className="session-submit">
             Join Ripcamp
           </button>
-
         </form>
 
         <form className="guest-form" onSubmit={this.handleGuestLogin}>
@@ -104,13 +98,21 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signup(this.state).then(() => this.props.closeModal());
+    this.props.signup(this.state).then(() => {
+      if (this.props.signedIn) {
+        this.props.closeModal();
+      }
+    });
   }
 
   handleGuestLogin(e) {
     e.preventDefault();
-    const guest = { email: "Spongebob@bikinibottom.com", password: "password" };
-    this.props.login(guest).then(() => this.props.closeModal());
+    const guest = { email: "guest@user.com", password: "guestuser" };
+    this.props.login(guest).then(() => {
+      if (this.props.signedIn) {
+        this.props.closeModal();
+      }
+    });
   }
 
   handleChange(e) {
