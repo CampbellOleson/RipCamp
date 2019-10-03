@@ -29,7 +29,7 @@ const SurfSpotSchema = new Schema({
     type: Array
   },
   reviews: {
-    type: String
+    type: Array
   },
   date: {
     type: Date,

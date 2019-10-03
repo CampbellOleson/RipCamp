@@ -114,8 +114,8 @@ class SurfMap extends React.Component {
     const currentId = this.props.spots[0] ? this.props.spots[0]._id : 1;
     if (
       this.MarkerManager &&
-      oldProps.spots.length != this.props.spots.length &&
-      oldId != currentId
+      oldProps.spots.length !== this.props.spots.length &&
+      oldId !== currentId
     ) {
       this.MarkerManager.updateMarkers(this.props.spots);
     }
@@ -144,14 +144,19 @@ class SurfMap extends React.Component {
 
   updateMapBounds(map) {
     const bounds = map.getBounds();
+
     const northEast = bounds.getNorthEast();
     const southWest = bounds.getSouthWest();
     const bounds_obj = {
       northEast: { lat: northEast.lat(), lng: northEast.lng() },
       southWest: { lat: southWest.lat(), lng: southWest.lng() }
+
     };
     this.props.updateFilter("bounds", bounds_obj);
   }
+  // northEast: { lat: bounds.oa.h, lng: bounds.ka.h },
+  // southWest: { lat: bounds.oa.g, lng: bounds.ka.g }
+
 
   moveToLocation(lat, lng) {
     GoogleMapsLoader.load(google => {

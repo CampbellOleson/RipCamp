@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from 'react-router-dom';
-import SearchBar from '../searchbar/searchbar_container';
+import { Link } from "react-router-dom";
+import SearchBar from "../searchbar/searchbar_container";
 
 class Navbar extends React.Component {
   constructor(props) {
@@ -15,29 +15,34 @@ class Navbar extends React.Component {
     if (signedIn) {
       return (
         <div className="right-nav">
-          <h4 className="logged-in-user">Welcome, {currentUser.email}</h4>
-          <button onClick={this.handleLogOut} className="nav-logout-btn">Log Out</button>
-          
+          <h4 className="logged-in-user">
+            Welcome, {currentUser ? currentUser.email : "new user"}
+          </h4>
+          <button onClick={this.handleLogOut} className="nav-logout-btn">
+            Log Out
+          </button>
         </div>
-        
-      )
+      );
     } else {
       return (
         <div className="right-nav">
-          <button onClick={() => openModal('login')} className="nav-login-btn">Log In</button>
-          <button onClick={() => openModal('signup')}  className="nav-login-btn">Sign Up</button>
+          <button onClick={() => openModal("login")} className="nav-login-btn">
+            Log In
+          </button>
+          <button onClick={() => openModal("signup")} className="nav-login-btn">
+            Sign Up
+          </button>
         </div>
-      )
+      );
     }
   }
 
-  render() { 
+  render() {
     let searchbar;
     if (this.props.location.pathname !== "/") {
-      searchbar = <SearchBar />
+      searchbar = <SearchBar />;
     }
     return (
-
       <nav className="navbar">
         <div className="left-nav">
           <Link to="/" className="logo">
@@ -55,7 +60,7 @@ class Navbar extends React.Component {
   handleLogOut(e) {
     e.preventDefault();
     this.props.logout();
-      // .then(history.push("/"));
+    // .then(history.push("/"));
   }
 }
 
