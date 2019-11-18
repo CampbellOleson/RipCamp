@@ -33,9 +33,6 @@ const receiveNewReview = review => ({
   review
 });
 
-
-
-
 const receiveSearchSuggestions = suggestions => ({
   type: RECEIVE_SEARCH_SUGGESTIONS,
   suggestions
