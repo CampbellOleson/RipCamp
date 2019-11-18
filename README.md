@@ -1,81 +1,28 @@
-# [RipCamp](https://ripcamp.herokuapp.com/#/)
+# [RipCamp](https://ripcamp.herokuapp.com/)
 
-## Background and overview
+RipCamp is the go-to website for finding all of the best surf. Users can navigate the globe using RipCamp's map-based interface to find the locations of surf spots anywhere. RipCamp also has information on individual surf spots, including a description, difficulty level, and local weather conditions. 
 
-We've decided to create a HipCamp clone, "RipCamp", that allows users to locate the best surfing spots in town, and has information on conditions, such as surf, weather, and how crowded a spot is.
+RipCamp is built with **ExpressJS, MongoDB, and React/Redux on the frontend.** It also encorperates **Google Maps API** for the map interface, and **Open Weather API** for weather conditions. 
 
-## Functionality and MVP
+![Splash Page](./screenshots/splash.png)
 
-1. New account creation, login, and guest/demo login
-2. A production README (NB: check out the sample production README - Accessing this on GitHub? Use this link.)
-3. Hosting on Heroku
-4. Show page
-   -weather and surf conditions
-   -difficulty level
-   -photos
-5. Homepage/quickshow
-   Surf Index page
-   -sorted by date (this weekend, next weekend, etc.)
-   Adequate styling
-   Smooth, bug-free navigation
-   Adequate and appropriate seeds to demonstrate the feature
-6. Map
-   - show all surf spots in the area
-   - highlight the spot that you click on
-     Smooth, bug-free navigation
-     Adequate and appropriate seeds to demonstrate the feature
-7. Search bar
-   -search filters (surf, difficulty, things that are allowed)
-   Smooth, bug-free navigation
-   Adequate and appropriate seeds to demonstrate the feature
-8. Reviews
-   -stars
-   -write a comment
-   -like a comment
+## Features
 
-9. Optional:
+   **Map/Index**
+   
+- RipCamp's primary interface is a map that users can navigate in search of surf spots. Surf spots on the map have markers indicating their locations. 
+- The index on the left-hand side of the screen displays the surf spots that are within the bounds of the map. If you navigate away from the surf spots on the map, they will disappear from the index.
+- Underlying this is a bounds-based query system that uses the latitude/longitude of the corners of the map to query the database for surf spots within range, which are then displayed on the map and in the index. 
+- The map also features dynamic UX/UI. When you mouseover a map marker for a surf spot, the index will scroll to display that surf spot and highlight it. Similarly, if you mouseover a surf spot in the index, the info bubble on its respective map marker will open. 
 
-- hosting feature
-- advanced search filters
+![Index](./screenshots/index.png)
 
-## Technologies and Technical Challenges
+   **Weather**
 
-- MongoDB
-- MERN framework
-- Weather Api
-- Google Maps Api
-- AWS photo hosting
-- React/redux
-- Node
-- Express
+- RipCamp uses the latitude/longitude of a given surf spot to fetch the local weather conditions from Open Weather API. Weather conditions are displayed on the surf-spot show page.
 
-## Day-by-day
+![Weather](./screenshots/weather.png)
 
-### Day 1:
+What are you waiting for? Sign Up!
 
-1. user auth/account creation - Campbell
-2. sign in/sign up page -kevin
-3. schema for surf spots - Anthony
-4. api routes for surf spots - Anthony
-
-### Day 2-3:
-
-5. react and visual components for different front-end routes
-   -spots index - Campbell
-   -quickshow - Anthony
-   -show page - kevin
-   -AWS photo hosting - all 3, captain Kevin
-
-### Day 4:
-
-6. map - all 3
-
-### Day 5:
-
-7. backend regex search - Campbell Anthony
-8. search and nav bar - Kevin
-
-### Bonus:
-
-9. reviews schema and routes
-10. reviews visual components
+![Login](./screenshots/login.png)

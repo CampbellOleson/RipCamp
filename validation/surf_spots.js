@@ -28,7 +28,7 @@ module.exports = function validateSurfSpotInput(data) {
     errors.difficulty =
       "Difficuly level must be one of the options (beginner, intermediate, difficult, dangerous)";
   }
-  if (Validator.isEmpty(data.review)) {
-    errors.review = "Review must have text before being submitted";
-  }
+  // if (Validator.isEmpty(data.review)) {
+  //   errors.review = "Review must have text before being submitted";
+  // }
 };

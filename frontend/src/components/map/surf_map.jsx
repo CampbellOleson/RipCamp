@@ -144,14 +144,19 @@ class SurfMap extends React.Component {
 
   updateMapBounds(map) {
     const bounds = map.getBounds();
+
     const northEast = bounds.getNorthEast();
     const southWest = bounds.getSouthWest();
     const bounds_obj = {
       northEast: { lat: northEast.lat(), lng: northEast.lng() },
       southWest: { lat: southWest.lat(), lng: southWest.lng() }
+
     };
     this.props.updateFilter("bounds", bounds_obj);
   }
+  // northEast: { lat: bounds.oa.h, lng: bounds.ka.h },
+  // southWest: { lat: bounds.oa.g, lng: bounds.ka.g }
+
 
   moveToLocation(lat, lng) {
     GoogleMapsLoader.load(google => {
