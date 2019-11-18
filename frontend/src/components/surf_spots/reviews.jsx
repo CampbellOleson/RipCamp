@@ -22,7 +22,6 @@ class Review extends React.Component {
         if (this.state.reviews.length === 0) {
             return (<div>There are no Reviews</div>)
         } else {
-            // debugger;
             return (
                 <div>
                     <h2>All Reviews</h2>
