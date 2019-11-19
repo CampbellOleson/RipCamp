@@ -23,7 +23,7 @@ class SurfSpotShow extends React.Component {
 
   componentDidUpdate(prevProps) {
     const id = this.props.match.params.spot_id;
-    if (prevProps.spot && prevProps.spot._id != id) {
+    if (prevProps.spot && prevProps.spot._id !== id) {
       this.props.getSingleSurfSpot(id);
     }
   }

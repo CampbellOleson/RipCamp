@@ -154,9 +154,6 @@ class SurfMap extends React.Component {
     };
     this.props.updateFilter("bounds", bounds_obj);
   }
-  // northEast: { lat: bounds.oa.h, lng: bounds.ka.h },
-  // southWest: { lat: bounds.oa.g, lng: bounds.ka.g }
-
 
   moveToLocation(lat, lng) {
     GoogleMapsLoader.load(google => {
